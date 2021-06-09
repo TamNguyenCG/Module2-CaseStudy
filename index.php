@@ -242,8 +242,9 @@
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
+
                             <li class="nav-item">
-                                <a href="resource/views/book/list.php" class="nav-link">
+                                <a href="index.php?page=booklist" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Book's List</p>
                                 </a>
@@ -366,6 +367,11 @@
                 <!-- /.row -->
                 <!-- Main row -->
                 <div class="row">
+                    <?php
+                    include_once "vendor/autoload.php";
+
+                    require_once "router.php"
+                    ?>
                     <!-- Left col -->
                     <section class="col-lg-12">
                         <div class="img-slide img-slid-media d-flex justify-content-between mt-3">

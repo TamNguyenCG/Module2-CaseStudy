@@ -15,7 +15,6 @@ class BookController
     public function bookList()
     {
         $books = $this->bookDB->getAll();
-        var_dump($books);die();
-        include "resource/views/book/list.php";
+        include_once "resource/views/book/list.php";
     }
 }
