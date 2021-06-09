@@ -1,5 +1,12 @@
-
 <?php
+session_start();
+
+use App\Midd\Auth;
+
+require_once "vendor/autoload.php";
+
+$auth = new Auth();
+$auth->isLogin();
 
 
 ?>
@@ -11,11 +18,13 @@
     <title>Phantasmal Dream Bookstore</title>
 
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="public/css/all.min.css">
     <!-- Ionicons -->
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <!-- Tempusdominus Bootstrap 4 -->
     <link rel="stylesheet" href="public/css/tempusdominus-bootstrap-4.min.css">
     <!-- iCheck -->
@@ -66,7 +75,8 @@
                 <div class="navbar-search-block">
                     <form class="form-inline">
                         <div class="input-group input-group-sm">
-                            <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+                            <input class="form-control form-control-navbar" type="search" placeholder="Search"
+                                   aria-label="Search">
                             <div class="input-group-append">
                                 <button class="btn btn-navbar" type="submit">
                                     <i class="fas fa-search"></i>
@@ -98,7 +108,8 @@
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
         <a href="index3.html" class="brand-link">
-            <img src="public/css/mileka.png" alt="Bookstore Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+            <img src="public/css/mileka.png" alt="Bookstore Logo" class="brand-image img-circle elevation-3"
+                 style="opacity: .8">
             <span class="brand-text font-weight-light">Phantasmal Dream</span>
         </a>
 
@@ -117,7 +128,8 @@
             <!-- SidebarSearch Form -->
             <div class="form-inline">
                 <div class="input-group" data-widget="sidebar-search">
-                    <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+                    <input class="form-control form-control-sidebar" type="search" placeholder="Search"
+                           aria-label="Search">
                     <div class="input-group-append">
                         <button class="btn btn-sidebar">
                             <i class="fas fa-search fa-fw"></i>
@@ -128,7 +140,8 @@
 
             <!-- Sidebar Menu -->
             <nav class="mt-2">
-                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                    data-accordion="false">
                     <!-- Add icons to the links using the .nav-icon class
                          with font-awesome or any other icon font library -->
                     <li class="nav-item menu-open">
@@ -168,7 +181,8 @@
                         <ul class="nav nav-treeview">
                             <div class="form-inline">
                                 <div class="input-group" data-widget="sidebar-search">
-                                    <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+                                    <input class="form-control form-control-sidebar" type="search" placeholder="Search"
+                                           aria-label="Search">
                                     <div class="input-group-append">
                                         <button class="btn btn-sidebar">
                                             <i class="fas fa-search fa-fw"></i>
@@ -220,19 +234,13 @@
                             <li class="nav-item">
                                 <a href="pages/forms/advanced.html" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Nearly Published Author</p>
+                                    <p>Nearly Published Authors</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="pages/forms/editors.html" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>All Authors</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="pages/forms/validation.html" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Validation</p>
                                 </a>
                             </li>
                         </ul>
@@ -249,7 +257,7 @@
                             <li class="nav-item">
                                 <a href="pages/tables/simple.html" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Simple Tables</p>
+                                    <p>Book's List</p>
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -325,7 +333,8 @@
                 <div class="row">
                     <div class="col-lg-4 col-6">
                         <!-- small box -->
-                        <div class="small-box" style="background-image: url('public/css/box.jpeg'); background-size: cover; background-position:center ">
+                        <div class="small-box"
+                             style="background-image: url('public/css/box.jpeg'); background-size: cover; background-position:center ">
                             <div class="inner">
                                 <h3 style="font-family: fantasy;color: red">33</h3>
                                 <p style="font-family: fantasy;color: red">News</p>
@@ -339,7 +348,8 @@
                     <!-- ./col -->
                     <div class="col-lg-4 col-6">
                         <!-- small box -->
-                        <div class="small-box" style="background-image: url('public/css/box3.jpg'); background-size: cover; background-position:center ">
+                        <div class="small-box"
+                             style="background-image: url('public/css/box3.jpg'); background-size: cover; background-position:center ">
                             <div class="inner">
                                 <h3 style="font-family: fantasy;color: gold">7</h3>
                                 <p style="font-family: fantasy;color: gold">Rewards</p>
@@ -353,7 +363,8 @@
                     <!-- ./col -->
                     <div class="col-lg-4 col-6">
                         <!-- small box -->
-                        <div class="small-box" style="background-image: url('public/css/box2.jpg'); background-size: cover; background-position:center ">
+                        <div class="small-box"
+                             style="background-image: url('public/css/box2.jpg'); background-size: cover; background-position:center ">
                             <div class="inner">
                                 <h3 style="font-family: fantasy;color: cyan">44</h3>
 
@@ -410,7 +421,8 @@
 <script src="public/js/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
-    $.widget.brid   ge('uibutton', $.ui.button)
+    $.widget.brid
+    ge('uibutton', $.ui.button)
 </script>
 <!-- Bootstrap 4 -->
 <script src="public/js/bootstrap.bundle.min.js"></script>
