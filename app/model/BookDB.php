@@ -8,11 +8,11 @@ use App\Book;
 class BookDB extends Model
 {
     public string $table = 'books';
-    public string $field = 'id,name,year,republish,summary,producer,license,sold,amount';
+    public string $files = 'id , name, year, republish, summary, producer, license, sold, amount';
 
     public function __construct()
     {
-        parent::__construct($this->table, $this->field);
+        parent::__construct($this->table, $this->files);
     }
 
     public function getAll(): array
