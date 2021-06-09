@@ -17,9 +17,7 @@ class BookDB extends Model
 
     public function getAll(): array
     {
-        $sql = "select * from `books`";
-        $stmt = $this->connection->query($sql);
-        $result = $stmt->fetchAll();
+        $result = $this->getAllData();
         $books = [];
         foreach ($result as $item) {
             $book = new Book($item);

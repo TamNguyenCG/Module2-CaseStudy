@@ -1,8 +1,4 @@
 
-<?php
-
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -140,7 +136,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="pages/widgets.html" class="nav-link">
+                        <a href="#" class="nav-link">
                             <i class="far fa-thumbs-up"></i>
                             <p>
                                 Recommended
@@ -241,15 +237,15 @@
                         <a href="#" class="nav-link">
                             <i class="fas fa-book"></i>
                             <p>
-                                Book
+                                Books
                                 <i class="fas fa-angle-left right"></i>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="pages/tables/simple.html" class="nav-link">
+                                <a href="resource/views/book/list.php" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Simple Tables</p>
+                                    <p>Book's List</p>
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -409,9 +405,6 @@
 <!-- jQuery UI 1.11.4 -->
 <script src="public/js/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-    $.widget.brid   ge('uibutton', $.ui.button)
-</script>
 <!-- Bootstrap 4 -->
 <script src="public/js/bootstrap.bundle.min.js"></script>
 <!-- ChartJS -->
