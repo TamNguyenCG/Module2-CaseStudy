@@ -12,9 +12,10 @@ class BookController
         $this->bookDB = new BookDB();
     }
 
-    public function index()
+    public function bookList()
     {
         $books = $this->bookDB->getAll();
+        var_dump($books);die();
         include "resource/views/book/list.php";
     }
 }
