@@ -11,10 +11,12 @@
   ],
   "autoload": {
     "psr-4": {
+      "App\\": "app",
       "App\\Controller\\": "app/controller",
       "App\\Model\\": "app/model"
     }
   },
   "require": {
+    "ext-pdo": "*"
   }
 }
