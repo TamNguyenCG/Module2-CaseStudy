@@ -1,5 +1,5 @@
 {
-  "name": "vendor_name/bookshop",
+  "name": "vendor_name/module2-casestudy",
   "description": "description",
   "minimum-stability": "stable",
   "license": "proprietary",
@@ -11,6 +11,7 @@
   ],
   "autoload": {
     "psr-4": {
+      "App\\": "app",
       "App\\Controller\\": "app/controller",
       "App\\Model\\": "app/model"
     }
