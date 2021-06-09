@@ -7,7 +7,7 @@
                 <div class="col-lg-4 col-6">
                     <!-- small box -->
                     <div class="small-box"
-                         style="background-image: url('../../public/css/box.jpeg'); background-size: cover; background-position:center ">
+                         style="background-image: url('public/css/box.jpeg'); background-size: cover; background-position:center ">
                         <div class="inner">
                             <h3 style="font-family: fantasy;color: red">33</h3>
                             <p style="font-family: fantasy;color: red">News</p>
@@ -22,7 +22,7 @@
                 <div class="col-lg-4 col-6">
                     <!-- small box -->
                     <div class="small-box"
-                         style="background-image: url('../../public/css/box3.jpg'); background-size: cover; background-position:center ">
+                         style="background-image: url('public/css/box3.jpg'); background-size: cover; background-position:center ">
                         <div class="inner">
                             <h3 style="font-family: fantasy;color: gold">7</h3>
                             <p style="font-family: fantasy;color: gold">Rewards</p>
@@ -37,7 +37,7 @@
                 <div class="col-lg-4 col-6">
                     <!-- small box -->
                     <div class="small-box"
-                         style="background-image: url('../../public/css/box2.jpg'); background-size: cover; background-position:center ">
+                         style="background-image: url('public/css/box2.jpg'); background-size: cover; background-position:center ">
                         <div class="inner">
                             <h3 style="font-family: fantasy;color: cyan">44</h3>
 
