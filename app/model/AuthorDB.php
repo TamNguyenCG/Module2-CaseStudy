@@ -6,6 +6,7 @@ namespace App\Model;
 use App\Author;
 class AuthorDB extends Model
 {
+
     public string $table = 'authors';
     public string $field = 'id,name,year_of_birth,number_of_books,nationality,link_wiki';
 
@@ -24,4 +25,6 @@ class AuthorDB extends Model
         }
         return $authors;
     }
+
+
 }
