@@ -19,7 +19,7 @@
                     <thead>
                     <tr style="text-align: center">
                         <th scope="col">STT</th>
-                        <th scope="col">Image</th>
+                        <th scope="col">Book</th>
                         <th scope="col">Name</th>
                         <th scope="col">Publish Year</th>
                         <th scope="col">Republish</th>
@@ -50,4 +50,5 @@
             </div>
         </div>
     </div>
+</div>
 

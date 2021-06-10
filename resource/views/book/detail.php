@@ -18,8 +18,8 @@
                     <thead>
                     <tr style="text-align: center">
                         <th scope="col">STT</th>
-                        <th scope="col">Image</th>
-                        <th scope="col">Name</th>
+                        <th scope="col">Book</th>
+<!--                        <th scope="col">Name</th>-->
                         <th scope="col">Publish Year</th>
                         <th scope="col">Republish</th>
                         <th scope="col">ISBN</th>
@@ -34,8 +34,8 @@
                     <?php foreach ($books as $key => $item): ?>
                         <tr style="text-align: center">
                             <td scope="row"><?php echo $key + 1 ?></td>
-                            <td scope="row"><img width="140px" height="180px" src="<?php echo $item->image ?>"></td>
-                            <td scope="row"><?php echo $item->name ?></td>
+                            <td scope="row"><img width="120px" height="180px" src="<?php echo $item->image ?>"></td>
+<!--                            <td scope="row">--><?php //echo $item->name ?><!--</td>-->
                             <td scope="row"><?php echo $item->publish ?></td>
                             <td scope="row"><?php echo $item->republish ?></td>
                             <td scope="row"><?php echo $item->ISBN ?></td>
@@ -47,10 +47,12 @@
                             <td>
                                 <a type="button" href="index.php?page=booklist"
                                    class="btn btn-success">Back</a>
-<!--                                <a type="button" href="index.php?page=edit&id=--><?php //echo $item->id ?><!--"-->
-<!--                                   class="btn btn-success">Edit</a>-->
-<!--                                <a type="button" href="index.php?page=delete&id=--><?php //echo $item->id ?><!--"-->
-<!--                                   class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete</a>-->
+                                <!--                                <a type="button" href="index.php?page=edit&id=-->
+                                <?php //echo $item->id ?><!--"-->
+                                <!--                                   class="btn btn-success">Edit</a>-->
+                                <!--                                <a type="button" href="index.php?page=delete&id=-->
+                                <?php //echo $item->id ?><!--"-->
+                                <!--                                   class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete</a>-->
                             </td>
                         </tr>
                     <?php endforeach; ?>
