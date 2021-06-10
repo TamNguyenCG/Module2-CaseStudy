@@ -21,10 +21,9 @@
     </tr>
     </thead>
     <tbody>
-    <?php foreach ($authors as $key => $author) ?>
+    <?php foreach ($authors as $key => $author): ?>
     <tr>
-        <th scope="row">1</th>
-        <td><?php echo $key++ ?> </td>
+        <th scope="row"><?php echo $author->id ?></th>
         <td><?php echo $author->name ?> </td>
         <td><?php echo $author->yearOfBirth ?> </td>
         <td><?php echo $author->numberOfBooks ?> </td>
@@ -32,7 +31,7 @@
         <td><?php echo $author->linkWiki ?> </td>
 
     </tr>
-
+   <?php endforeach; ?>
     </tbody>
 </table>
 </body>

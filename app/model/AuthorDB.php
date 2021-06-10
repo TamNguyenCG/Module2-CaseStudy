@@ -8,7 +8,7 @@ class AuthorDB extends Model
 {
 
     public string $table = 'authors';
-    public string $field = 'id,name,year_of_birth,number_of_books,nationality,link_wiki';
+    public string $field = 'id,name,year,published,nationality,wikipedia';
 
     public function __construct()
     {
