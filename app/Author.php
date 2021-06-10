@@ -7,7 +7,7 @@ namespace App;
 class Author
 {
     public string $name;
-    public int $yearOfBirth;
+    public int $dateOfBirth;
     public int $numberOfBooks;
     public string $nationality;
     public string $linkWiki;
@@ -15,7 +15,7 @@ class Author
 
     public function __construct($data){
         $this->name = $data['name'];
-        $this->yearOfBirth = $data['year'];
+        $this->dateOfBirth = $data['year'];
         $this->numberOfBooks = $data['published'];
         $this->nationality = $data['nationality'];
         $this->linkWiki = $data['wikipedia'];

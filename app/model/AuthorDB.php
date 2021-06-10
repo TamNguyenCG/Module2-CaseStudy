@@ -25,6 +25,20 @@ class AuthorDB extends Model
         }
         return $authors;
     }
+    public function del($id){
+        $this->delete($id);
+    }
+    public function create(object $author): bool
+    {
+        $sql = "INSERT INTO `$this->table` (name,year,published,nationality,wikipedia) VALUES (?,?,?,?,?)";
+        $stmt = $this->connection->prepare($sql);
+        $stmt->bindParam(1,$author->name);
+        $stmt->bindParam(2,$author->dateOfBirth);
+        $stmt->bindParam(3,$author->numberOfBooks);
+        $stmt->bindParam(4,$author->nationality);
+        $stmt->bindParam(5,$author->linkWiki);
+       return  $stmt->execute();
+    }
 
 
 }

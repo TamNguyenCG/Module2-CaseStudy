@@ -10,7 +10,13 @@
 <body>
 <table class="table">
     <thead>
-
+     <tr>
+         <td><a class="btn btn-success mb-2" href="index.php?page=addAuthor">Add</a></td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td></td>
+     </tr>
     <tr>
         <th scope="col">#</th>
         <th scope="col">Name</th>
@@ -25,10 +31,15 @@
     <tr>
         <th scope="row"><?php echo $author->id ?></th>
         <td><?php echo $author->name ?> </td>
-        <td><?php echo $author->yearOfBirth ?> </td>
+        <td><?php echo $author->dateOfBirth ?> </td>
         <td><?php echo $author->numberOfBooks ?> </td>
         <td><?php echo $author->nationality ?> </td>
         <td><?php echo $author->linkWiki ?> </td>
+        <td><a href="index.php?page=deleteAuthor&id=<?php echo $author->id; ?>"
+               class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</a>
+        </td>
+
+        </td>
 
     </tr>
    <?php endforeach; ?>

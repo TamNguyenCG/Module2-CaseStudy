@@ -53,10 +53,7 @@ class BookDB extends Model
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    public function del($id)
-    {
-        $this->delete($id);
-    }
+
 
     public function searchByName($text): array
     {
