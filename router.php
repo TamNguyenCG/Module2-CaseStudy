@@ -25,6 +25,12 @@ switch ($page) {
     case "delete":
         $controller->delete();
         break;
+    case "deleteAuthor":
+        $authorController->deleteAuthor();
+        break;
+    case "addAuthor":
+        $authorController->create();
+        break;
     default:
         $home = new HomeController();
         $home->showDashBoard();
