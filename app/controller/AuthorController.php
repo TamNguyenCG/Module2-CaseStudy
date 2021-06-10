@@ -36,6 +36,7 @@ public function deleteAuthor(){
         }
         return $errors;
     }
+
     public function authorObj(): Author
     {
         $name = $_POST['name'];
@@ -50,9 +51,9 @@ public function deleteAuthor(){
             'nationality' => $nationality,
             'wikipedia' => $linkWiki,
         ];
-
         return new Author($data);
     }
+
     public function create(){
 
       if($_SERVER['REQUEST_METHOD']=='GET'){
@@ -67,7 +68,6 @@ public function deleteAuthor(){
               include_once "resource/views/author/add.php";
           }
       }
-
     }
     public function edit(){
     $id = $_REQUEST['id'];

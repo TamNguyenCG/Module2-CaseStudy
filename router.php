@@ -25,11 +25,17 @@ switch ($page) {
     case "delete":
         $controller->delete();
         break;
+    case 'search':
+        $controller->search();
+        break;
     case "deleteAuthor":
         $authorController->deleteAuthor();
         break;
     case "addAuthor":
         $authorController->create();
+        break;
+    case 'detail':
+        $controller->getDetail();
         break;
     case "editAuthor":
         $authorController->edit();
