@@ -2,7 +2,6 @@
 
 namespace App\Service;
 
-
 use App\Model\AuthModel;
 use App\Model\UserDB;
 use App\User;
@@ -34,13 +33,12 @@ class AuthService
         header('Location: resource/pages/login.php');
     }
 
-    function add()
+    function add($request)
     {
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $name = $_POST["name"];
-            $email = $_POST["email"];
-            $phone = $_POST["phone"];
-            $password = $_POST["password"];
+            $name = $request["name"];
+            $email = $request["email"];
+            $phone = $request["phone"];
+            $password = $request["password"];
             $data = [
                 'name' => $name,
                 'email' => $email,
@@ -49,7 +47,5 @@ class AuthService
             ];
             $user = new User($data);
             $this->userDB->addUser($user);
-        }
-
     }
 }

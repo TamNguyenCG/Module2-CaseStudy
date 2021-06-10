@@ -9,7 +9,6 @@ require_once "vendor/autoload.php";
 $auth = new Auth();
 $auth->isLogin();
 
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -50,9 +49,9 @@ $auth->isLogin();
 <div class="wrapper">
 
     <!-- Preloader -->
-    <div class="preloader flex-column justify-content-center align-items-center">
-        <img class="animation__shake" src="public/css/mileka.png" alt="Bookstore Logo" height="300" width="240">
-    </div>
+<!--    <div class="preloader flex-column justify-content-center align-items-center">-->
+<!--        <img class="animation__shake" src="public/css/mileka.png" alt="Bookstore Logo" height="300" width="240">-->
+<!--    </div>-->
 
     <!-- Navbar -->
     <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -69,15 +68,6 @@ $auth->isLogin();
         <?php include_once "router.php" ?>
     </div>
 
-    <!-- /.content -->
-
-
-    <!-- /.content -->
-
-
-    <!-- /.content-wrapper -->
-    <footer class="main-footer">
-    </footer>
 
     <!-- Control Sidebar -->
     <aside class="control-sidebar control-sidebar-dark">

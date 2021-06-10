@@ -1,4 +1,13 @@
+<?php
+use App\Controller\AuthController;
 
+require_once "../../vendor/autoload.php";
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $authController = new AuthController();
+    $authController->register($_REQUEST);
+}
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -26,7 +35,7 @@
             <a href="" class="btn btn-block btn-facebook"> <i class="fab fa-facebook-f"></i>   Login via
                 facebook</a>
         </p>
-        <form>
+        <form method="post" action="register.php">
             <div class="form-group input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text"> <i class="fa fa-user"></i> </span>

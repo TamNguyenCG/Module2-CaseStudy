@@ -24,12 +24,14 @@ class AuthController
     {
         $this->authService->logout();
     }
-    public function register()
+
+    public function getFormRegister()
     {
-        if ($_SERVER["REQUEST_METHOD"] == "GET"){
-            header( "Location: resource/pages/register.php");
-        } else {
-            $this->authService->add();
-        }
+        header("Location: resource/pages/register.php");
+    }
+
+    public function register($request)
+    {
+       $this->authService->add($request);
     }
 }

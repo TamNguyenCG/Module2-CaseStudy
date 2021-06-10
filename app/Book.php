@@ -7,6 +7,7 @@ namespace App;
 class Book
 {
     public int $id;
+    public mixed $image;
     public string $name;
     public int $publish;
     public int $republish;
@@ -16,10 +17,11 @@ class Book
     public string $license;
     public int $sold;
     public int $amount;
-//    public string $image;
+
 
     public function __construct($data)
     {
+        $this->image = $data['image'];
         $this->name = $data['name'];
         $this->publish = $data['publish'];
         $this->republish = $data['republish'];

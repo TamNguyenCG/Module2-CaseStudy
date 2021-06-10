@@ -25,4 +25,21 @@ class Model
         return $stmt->fetchAll();
     }
 
+    public function delete($id): bool
+    {
+        $sql = "delete from `$this->table` where id = ?";
+        $stmt = $this->connection->prepare($sql);
+        $stmt->bindParam(1, $id);
+        return $stmt->execute();
+    }
+
+    public function getIdData($id): array
+    {
+        $sql = "select $this->field from $this->table where id = ?";
+        $stmt = $this->connection->prepare($sql);
+        $stmt->bindParam(1, $id);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+
 }
