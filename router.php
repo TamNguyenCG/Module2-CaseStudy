@@ -31,6 +31,9 @@ switch ($page) {
     case "addAuthor":
         $authorController->create();
         break;
+    case "editAuthor":
+        $authorController->edit();
+        break;
     default:
         $home = new HomeController();
         $home->showDashBoard();
