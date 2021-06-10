@@ -51,7 +51,7 @@ class BookDB extends Model
 
     public function getImgNameById($id)
     {
-        $sql = "SELECT image FROM books WHERE id = ?";
+        $sql = "SELECT image FROM $this->table WHERE id = ?";
         $stmt = $this->connection->prepare($sql);
         $stmt->bindParam(1, $id);
         $stmt->execute();
@@ -68,13 +68,13 @@ class BookDB extends Model
         $stmt->execute();
         $result = $stmt->fetchAll();
 
-        $products = [];
+        $books = [];
         foreach ($result as $item) {
-            $product = new Book($item);
-            $product->id = $item['id'];
-            $products[] = $product;
+            $book = new Book($item);
+            $book->id = $item['id'];
+            $books[] = $book;
         }
-        return $products;
+        return $books;
     }
 
     public function getDetailByID($id): array
