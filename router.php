@@ -6,7 +6,7 @@ use App\Controller\HomeController;
 
 $controller = new BookController();
 $page = $_REQUEST['page'] ?? null;
-switch ($page){
+switch ($page) {
     case 'booklist':
         $controller->bookList();
         break;

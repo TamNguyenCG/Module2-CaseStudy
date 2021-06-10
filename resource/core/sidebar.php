@@ -1,10 +1,11 @@
+<!-- Main Sidebar Container -->
+
 <!-- Brand Logo -->
 <a href="#" class="brand-link">
     <img src="public/css/mileka.png" alt="Bookstore Logo" class="brand-image img-circle elevation-3"
          style="opacity: .8">
     <span class="brand-text font-weight-light">Phantasmal Dream</span>
 </a>
-
 <!-- Sidebar -->
 <div class="sidebar">
     <!-- Sidebar user panel (optional) -->
@@ -16,7 +17,6 @@
             <a href="#" class="d-block">DarkVioletFairy</a>
         </div>
     </div>
-
     <!-- SidebarSearch Form -->
     <div class="form-inline">
         <div class="input-group" data-widget="sidebar-search">
@@ -28,7 +28,6 @@
             </div>
         </div>
     </div>
-
     <!-- Sidebar Menu -->
     <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -150,7 +149,6 @@
                     </p>
                 </a>
                 <ul class="nav nav-treeview">
-
                     <li class="nav-item">
                         <a href="index.php?page=booklist" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
@@ -181,40 +179,15 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="index.php?page=logout" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>
-                                Login & Register
+                                Log out
                                 <i class="fas fa-angle-left right"></i>
                             </p>
                         </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Login</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Register</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Forgot Password</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Recover Password</p>
-                                </a>
-                            </li>
-                        </ul>
                     </li>
+                </ul>
     </nav>
     <!-- /.sidebar-menu -->
 </div>

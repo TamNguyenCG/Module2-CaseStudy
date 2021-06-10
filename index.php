@@ -1,5 +1,6 @@
 <?php
 session_start();
+ob_start();
 
 use App\Midd\Auth;
 
@@ -7,7 +8,6 @@ require_once "vendor/autoload.php";
 
 $auth = new Auth();
 $auth->isLogin();
-
 
 ?>
 <!DOCTYPE html>
@@ -55,24 +55,23 @@ $auth->isLogin();
 
     <!-- Navbar -->
     <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-    <?php include_once "resource/core/navbar.php" ?>
+        <?php include_once "resource/core/navbar.php" ?>
     </nav>
     <!-- /.navbar -->
 
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <?php include_once "resource/core/sidebar.php" ?>
+        <?php include_once "resource/core/sidebar.php" ?>
     </aside>
-
-
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-    <?php include_once "router.php" ?>
+        <?php include_once "router.php" ?>
     </div>
+
     <!-- /.content -->
 
-   
-        <!-- /.content -->
+
+    <!-- /.content -->
 
 
     <!-- /.content-wrapper -->
