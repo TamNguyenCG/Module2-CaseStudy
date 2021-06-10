@@ -11,13 +11,12 @@ class Book
     public string $name;
     public int $publish;
     public int $republish;
-//    public string $ISBN;
+    public mixed $ISBN;
     public string $summary;
     public string $publisher;
     public string $license;
     public int $sold;
     public int $amount;
-
 
     public function __construct($data)
     {
@@ -25,7 +24,7 @@ class Book
         $this->name = $data['name'];
         $this->publish = $data['publish'];
         $this->republish = $data['republish'];
-//        $this->ISBN = $data['ISBN'];
+        $this->ISBN = $data['ISBN'];
         $this->summary = $data['summary'];
         $this->publisher = $data['publisher'];
         $this->license = $data['license'];

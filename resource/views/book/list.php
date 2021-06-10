@@ -29,7 +29,6 @@
                     <tbody>
                     <?php foreach ($books as $key => $item): ?>
                         <tr style="text-align: center">
-                            <?php var_dump($item->name);?>
                             <td scope="row"><?php echo $key + 1 ?></td>
                             <td><img width="150px" height="200px" src="<?php echo $item->image;?>"></td>
                             <td scope="row"><?php echo $item->name ?></td>

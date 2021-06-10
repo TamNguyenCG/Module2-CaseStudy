@@ -4,6 +4,8 @@
             <h1>Book's List</h1>
             <div class="row">
                 <div class="col-6">
+                </div>
+                <div class="col-6">
                     <form class="d-flex" method="post" action="index.php?page=search">
                         <input class="form-control me-2" name="search" placeholder="Search By Name" aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Search</button>
@@ -20,7 +22,12 @@
                         <th scope="col">Name</th>
                         <th scope="col">Publish Year</th>
                         <th scope="col">Republish</th>
+                        <th scope="col">ISBN</th>
+                        <th scope="col">Summary</th>
                         <th scope="col">Publisher</th>
+                        <th scope="col">License</th>
+                        <th scope="col">Sold</th>
+                        <th scope="col">Amount</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -31,7 +38,12 @@
                             <td scope="row"><?php echo $item->name ?></td>
                             <td scope="row"><?php echo $item->publish ?></td>
                             <td scope="row"><?php echo $item->republish ?></td>
+                            <td scope="row"><?php echo $item->ISBN ?></td>
+                            <td scope="row"><?php echo $item->summary ?></td>
                             <td scope="row"><?php echo $item->publisher ?></td>
+                            <td scope="row"><?php echo $item->license ?></td>
+                            <td scope="row"><?php echo $item->sold ?></td>
+                            <td scope="row"><?php echo $item->amount ?></td>
                             <td>
                                 <a type="button" href="index.php?page=booklist"
                                    class="btn btn-success">Back</a>
