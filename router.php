@@ -37,6 +37,9 @@ switch ($page) {
     case 'detail':
         $controller->getDetail();
         break;
+    case "editAuthor":
+        $authorController->edit();
+        break;
     default:
         $home = new HomeController();
         $home->showDashBoard();

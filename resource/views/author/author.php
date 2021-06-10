@@ -38,6 +38,8 @@
         <td><a href="index.php?page=deleteAuthor&id=<?php echo $author->id; ?>"
                class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</a>
         </td>
+        <td><a href="index.php?page=editAuthor&id=<?php echo $author->id; ?>"
+               class="btn btn-danger btn-dark" >Edit</a>
 
         </td>
 
