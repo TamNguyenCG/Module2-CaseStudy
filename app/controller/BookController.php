@@ -82,4 +82,15 @@ class BookController
             }
         }
     }
+
+    public function delete()
+    {
+        $id = $_REQUEST['id'];
+        $imgName = $this->bookDB->getImgNameById($id);
+        if (file_exists($imgName['image'])) {
+            unlink($imgName['image']);
+        }
+        $this->bookDB->del($id);
+        header("location: index.php?page=booklist");
+    }
 }
