@@ -20,16 +20,17 @@ class BookController
         include_once "resource/views/book/list.php";
     }
 
-    public function uploadImg(): string
+    public function uploadImage(): string
     {
-        $target_dir = "image/";
-        $target_file = $target_dir . basename(date("H:i - d:m:Y") . "-" . $_FILES['image']['name']);
+        $target_dir = "public/image/";
+        $target_file = $target_dir . basename($_FILES['image']['name']);
         move_uploaded_file($_FILES['image']['tmp_name'], $target_file);
         return $target_file;
     }
 
     public function bookObj(): Book
     {
+        $image = $this->uploadImage();
         $name = $_POST['name'];
         $publish = $_POST['publish'];
         $republish = $_POST['republish'];
@@ -38,9 +39,9 @@ class BookController
         $license = $_POST['license'];
         $sold = $_POST['sold'];
         $amount = $_POST['amount'];
-        $image = $this->uploadImg();
 
         $data = [
+            'image' => $image,
             'name' => $name,
             'publish' => $publish,
             'republish' => $republish,
@@ -48,8 +49,7 @@ class BookController
             'publisher' => $publisher,
             'license' => $license,
             'sold' => $sold,
-            'amount' => $amount,
-            'image' => $image
+            'amount' => $amount
         ];
         return new Book($data);
     }
@@ -92,5 +92,18 @@ class BookController
         }
         $this->bookDB->del($id);
         header("location: index.php?page=booklist");
+    }
+
+    public function search()
+    {
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $text = $_POST['search'];
+            if (empty($text)) {
+                $books = $this->bookDB->getAll();
+            } else {
+                $books = $this->bookDB->searchByName($text);
+            }
+            include "resource/views/book/list.php";
+        }
     }
 }

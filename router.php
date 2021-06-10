@@ -17,8 +17,11 @@ switch ($page) {
     case 'add':
         $controller->add();
         break;
-    case "delete":
+    case 'delete':
         $controller->delete();
+        break;
+    case 'search':
+        $controller->search();
         break;
     default:
         $home = new HomeController();

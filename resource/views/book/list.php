@@ -29,8 +29,9 @@
                     <tbody>
                     <?php foreach ($books as $key => $item): ?>
                         <tr style="text-align: center">
+                            <?php var_dump($item->name);?>
                             <td scope="row"><?php echo $key + 1 ?></td>
-                            <td><img width="100px" height="50px" src="<?php echo $item->image ?>"</td>
+                            <td><img width="150px" height="200px" src="<?php echo $item->image;?>"></td>
                             <td scope="row"><?php echo $item->name ?></td>
                             <td scope="row"><?php echo $item->publish ?></td>
                             <td scope="row"><?php echo $item->republish ?></td>
