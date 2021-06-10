@@ -54,18 +54,24 @@ $auth->isLogin();
     </div>
 
     <!-- Navbar -->
-    <?php include_once "resource/core/navbar.php" ?>
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+        <?php include_once "resource/core/navbar.php" ?>
+    </nav>
     <!-- /.navbar -->
 
     <!-- Main Sidebar Container -->
-    <?php include_once "resource/core/sidebar.php" ?>
-
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+        <?php include_once "resource/core/sidebar.php" ?>
+    </aside>
     <!-- Content Wrapper. Contains page content -->
-    <?php include_once "router.php" ?>
+    <div class="content-wrapper">
+        <?php include_once "router.php" ?>
+    </div>
+
     <!-- /.content -->
 
-   
-        <!-- /.content -->
+
+    <!-- /.content -->
 
 
     <!-- /.content-wrapper -->
