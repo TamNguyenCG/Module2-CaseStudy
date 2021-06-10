@@ -2,23 +2,23 @@
 namespace App\Service;
 
 
-use App\Model\UserModel;
+use App\Model\AuthModel;
 
 class AuthService
 {
-    protected UserModel $userModel;
+    protected $authModel;
 
     public function __construct()
     {
-        $this->userModel = new UserModel();
+        $this->authModel = new AuthModel();
     }
 
     function checkUserByEmailPassword($request): bool
     {
-        $user = $this->userModel->findByEmailPassword($request);
+        $user = $this->authModel->findByEmailPassword($request);
         if ($user) {
             $_SESSION['userLogin'] = $user;
-            header('location: ../../../index.php');
+            header('location: ../../index.php?page=default');
         }
         return false;
     }

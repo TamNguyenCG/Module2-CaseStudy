@@ -114,3 +114,12 @@
 .owl-next {
     right: 1%;
 }
+
+.login-container {
+    background-image: url("login/fantasy-library.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 800px;
+    width: 1280px;
+}
