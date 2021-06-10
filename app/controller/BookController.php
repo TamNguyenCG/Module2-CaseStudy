@@ -20,6 +20,13 @@ class BookController
         include_once "resource/views/book/list.php";
     }
 
+    public function getDetail()
+    {
+        $id = $_REQUEST['id'];
+        $books = $this->bookDB->getDetailByID($id);
+        include_once "resource/views/book/detail.php";
+    }
+
     public function uploadImage(): string
     {
         $target_dir = "public/image/";
@@ -109,9 +116,5 @@ class BookController
         }
     }
 
-    public function getDetail(){
-        $id = $_REQUEST['id'];
-        $books = $this->bookDB->getDetailByID($id);
-        include_once "resource/views/book/detail.php";
-    }
+
 }

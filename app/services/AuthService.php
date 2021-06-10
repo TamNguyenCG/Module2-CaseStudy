@@ -8,8 +8,8 @@ use App\User;
 
 class AuthService
 {
-    protected $authModel;
-    protected $userDB;
+    protected mixed $authModel;
+    protected mixed $userDB;
 
     public function __construct()
     {
