@@ -25,4 +25,12 @@ class Model
         return $stmt->fetchAll();
     }
 
+    public function delete($id): bool
+    {
+        $sql = "delete from $this->table where id = ?";
+        $stmt = $this->connection->prepare($sql);
+        $stmt->bindParam(1, $id);
+        return $stmt->execute();
+    }
+
 }

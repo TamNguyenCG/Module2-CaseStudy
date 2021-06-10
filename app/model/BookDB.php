@@ -4,6 +4,7 @@
 namespace App\Model;
 
 use App\Book;
+use PDO;
 
 class BookDB extends Model
 {
@@ -41,5 +42,19 @@ class BookDB extends Model
         $stmt->bindParam(8,$book->amount);
         $stmt->bindParam(9,$book->image);
         return $stmt->execute();
+    }
+
+    public function getImgNameById($id)
+    {
+        $sql = "SELECT image FROM books WHERE id = ?";
+        $stmt = $this->connection->prepare($sql);
+        $stmt->bindParam(1, $id);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
+    public function del($id)
+    {
+        $this->delete($id);
     }
 }

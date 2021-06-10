@@ -22,6 +22,9 @@ switch ($page) {
     case 'add':
         $controller->add();
         break;
+    case "delete":
+        $controller->delete();
+        break;
     default:
         $home = new HomeController();
         $home->showDashBoard();
