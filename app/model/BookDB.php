@@ -28,9 +28,10 @@ class BookDB extends Model
         return $books;
     }
 
-    public function create(object $book): bool
+    public function bookCreate(object $book): bool
     {
-        $sql = "INSERT INTO $this->table (image ,name, publish, republish, summary, publisher, license, sold, amount) VALUES (?,?,?,?,?,?,?,?,?)";
+        $sql = "INSERT INTO $this->table (image ,name, publish, republish, summary, publisher, license, sold, amount) 
+                                        VALUES (?,?,?,?,?,?,?,?,?)";
         $stmt = $this->connection->prepare($sql);
         $stmt->bindParam(1, $book->image);
         $stmt->bindParam(2, $book->name);
@@ -61,7 +62,7 @@ class BookDB extends Model
 
     public function searchByName($text): array
     {
-        $sql = "select $this->files from $this->table where `name` like :text";
+        $sql = "SELECT $this->files FROM $this->table WHERE `name` LIKE :text";
         $stmt = $this->connection->prepare($sql);
         $txt = '%' . $text . '%';
         $stmt->bindParam(':text', $txt);
@@ -87,5 +88,26 @@ class BookDB extends Model
             $books[] = $book;
         }
         return $books;
+    }
+
+    public function edit($id,$book): bool
+    {
+        $sql = "UPDATE $this->table SET image = ?, name=?, publish=?, republish=?, ISBN=?,
+                                        summary=?, publisher=?, license=?, sold=?, amount = ?
+                                    WHERE id =?";
+        $stmt = $this->connection->prepare($sql);
+        $stmt->bindParam(1,$book->image);
+        $stmt->bindParam(2,$book->name);
+        $stmt->bindParam(3,$book->publish);
+        $stmt->bindParam(4,$book->republish);
+        $stmt->bindParam(5,$book->ISBN);
+        $stmt->bindParam(6,$book->summary);
+        $stmt->bindParam(7,$book->publisher);
+        $stmt->bindParam(8,$book->license);
+        $stmt->bindParam(9,$book->sold);
+        $stmt->bindParam(10,$book->amount);
+        $stmt->bindParam(11,$id);
+        return $stmt->execute();
+
     }
 }

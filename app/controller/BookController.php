@@ -20,7 +20,7 @@ class BookController
         include_once "resource/views/book/list.php";
     }
 
-    public function getDetail()
+    public function getBookDetail()
     {
         $id = $_REQUEST['id'];
         $books = $this->bookDB->getDetailByID($id);
@@ -76,7 +76,7 @@ class BookController
         return $errors;
     }
 
-    public function add()
+    public function bookAdd()
     {
         if ($_SERVER["REQUEST_METHOD"] == "GET") {
             include "resource/views/book/add.php";
@@ -84,7 +84,7 @@ class BookController
             $errors = $this->error();
             if (empty($errors)) {
                 $book = $this->bookObj();
-                $this->bookDB->create($book);
+                $this->bookDB->bookCreate($book);
                 header("location: index.php?page=booklist");
             } else {
                 include "resource/views/book/add.php";
@@ -92,7 +92,7 @@ class BookController
         }
     }
 
-    public function delete()
+    public function bookDelete()
     {
         $id = $_REQUEST['id'];
         $imgName = $this->bookDB->getImgNameById($id);
@@ -103,7 +103,7 @@ class BookController
         header("location: index.php?page=booklist");
     }
 
-    public function search()
+    public function bookSearch()
     {
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $text = $_POST['search'];
@@ -116,5 +116,22 @@ class BookController
         }
     }
 
+    public function bookEdit()
+    {
+        $id = $_REQUEST['id'];
+        $books = $this->bookDB->getDetailByID($id);
 
+        if ($_SERVER["REQUEST_METHOD"] == "GET") {
+            include "resource/views/book/edit.php";
+        } else {
+            $errors = $this->error();
+            if (empty($errors)) {
+                $book = $this->bookObj();
+                $this->bookDB->edit($id,$book);
+                header("location: index.php?page=booklist");
+            } else {
+                include "resource/views/book/edit.php";
+            }
+        }
+    }
 }
