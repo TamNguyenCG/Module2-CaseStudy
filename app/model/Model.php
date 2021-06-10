@@ -39,7 +39,7 @@ class Model
         $stmt = $this->connection->prepare($sql);
         $stmt->bindParam(1, $id);
         $stmt->execute();
-        return $stmt->fetchAll();
+        return $stmt->fetch();
     }
 
 }

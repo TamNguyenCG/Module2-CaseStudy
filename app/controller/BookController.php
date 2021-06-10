@@ -34,6 +34,7 @@ class BookController
         $name = $_POST['name'];
         $publish = $_POST['publish'];
         $republish = $_POST['republish'];
+        $ISBN = $_POST['ISBN'];
         $summary = $_POST['summary'];
         $publisher = $_POST['publisher'];
         $license = $_POST['license'];
@@ -45,6 +46,7 @@ class BookController
             'name' => $name,
             'publish' => $publish,
             'republish' => $republish,
+            'ISBN' => $ISBN,
             'summary' => $summary,
             'publisher' => $publisher,
             'license' => $license,
@@ -57,7 +59,7 @@ class BookController
     public function error(): array
     {
         $errors = [];
-        $fields = ['name', 'publish', 'republish', 'summary', 'publisher', 'license', 'sold', 'amount'];
+        $fields = ['name', 'publish', 'republish', "ISBN", 'summary', 'publisher', 'license', 'sold', 'amount'];
 
         foreach ($fields as $field) {
             if (empty($_POST[$field])) {
@@ -105,5 +107,11 @@ class BookController
             }
             include "resource/views/book/list.php";
         }
+    }
+
+    public function getDetail(){
+        $id = $_REQUEST['id'];
+        $books = $this->bookDB->getDetailByID($id);
+        include_once "resource/views/book/detail.php";
     }
 }

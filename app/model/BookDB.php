@@ -9,7 +9,7 @@ use PDO;
 class BookDB extends Model
 {
     public string $table = 'books';
-    public string $files = 'id ,image, name, publish, republish, summary, publisher, license, sold, amount';
+    public string $files = 'id, image, name, publish, republish, ISBN, summary, publisher, license, sold, amount';
 
     public function __construct()
     {
@@ -41,8 +41,12 @@ class BookDB extends Model
         $stmt->bindParam(7, $book->license);
         $stmt->bindParam(8, $book->sold);
         $stmt->bindParam(9, $book->amount);
-
         return $stmt->execute();
+    }
+
+    public function del($id)
+    {
+        $this->delete($id);
     }
 
     public function getImgNameById($id)
@@ -53,7 +57,6 @@ class BookDB extends Model
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
-
 
 
     public function searchByName($text): array
@@ -74,15 +77,15 @@ class BookDB extends Model
         return $products;
     }
 
-    public function getByID($id): array
+    public function getDetailByID($id): array
     {
         $result = $this->getIdData($id);
-        $products = [];
+        $books = [];
         foreach ($result as $item) {
-            $product = new Book($item);
-            $product->id = $item['id'];
-            $products[] = $product;
+            $book = new Book($item);
+            $book->id = $item['id'];
+            $books[] = $book;
         }
-        return $products;
+        return $books;
     }
 }

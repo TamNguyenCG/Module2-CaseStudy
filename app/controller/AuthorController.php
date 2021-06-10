@@ -29,7 +29,6 @@ public function deleteAuthor(){
     {
         $errors = [];
         $fields = ['name', 'year', 'published','nationality','wikipedia'];
-
         foreach ($fields as $field) {
             if (empty($_POST[$field])) {
                 $errors[$field] = 'Must fill in blank spot';
@@ -37,6 +36,7 @@ public function deleteAuthor(){
         }
         return $errors;
     }
+
     public function authorObj(): Author
     {
         $name = $_POST['name'];
@@ -51,9 +51,9 @@ public function deleteAuthor(){
             'nationality' => $nationality,
             'wikipedia' => $linkWiki,
         ];
-
         return new Author($data);
     }
+
     public function create(){
 
       if($_SERVER['REQUEST_METHOD']=='GET'){
@@ -68,7 +68,25 @@ public function deleteAuthor(){
               include_once "resource/views/author/add.php";
           }
       }
-
     }
+    public function edit(){
+    $id = $_REQUEST['id'];
+    if($_SERVER['REQUEST_METHOD']=='GET') {
+
+        $authors = $this->authorDB->getId($id);
+        include_once "resource/views/author/edit.php";
+    } else {
+        $errors = $this->error();
+        if(empty($errors)){
+            $author = $this->authorObj();
+            $this->authorDB->update($id,$author);
+            header('Location: index.php?page=author');
+        } else {
+            include_once "resource/views/author/edit.php";
+        }
+    }
+    }
+
+
 
 }
