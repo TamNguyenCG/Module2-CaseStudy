@@ -49,9 +49,9 @@ $auth->isLogin();
 <div class="wrapper">
 
     <!-- Preloader -->
-    <div class="preloader flex-column justify-content-center align-items-center">
-        <img class="animation__shake" src="public/css/mileka.png" alt="Bookstore Logo" height="300" width="240">
-    </div>
+<!--    <div class="preloader flex-column justify-content-center align-items-center">-->
+<!--        <img class="animation__shake" src="public/css/mileka.png" alt="Bookstore Logo" height="300" width="240">-->
+<!--    </div>-->
 
     <!-- Navbar -->
     <nav class="main-header navbar navbar-expand navbar-white navbar-light">

@@ -18,6 +18,10 @@
     <div>
         <form method="post" enctype="multipart/form-data">
             <div class="mb-3">
+                <label class="form-label">Image</label>
+                <input type="file" class="form-control" name="image">
+            </div>
+            <div class="mb-3">
                 <label class="form-label">Name</label>
                 <input type="text" class="form-control" name="name">
                 <?php if(isset($errors['name'])): ?>
@@ -72,10 +76,6 @@
                 <?php if(isset($errors['amount'])): ?>
                     <p class="text-danger"><?php echo $errors['amount'] ?></p>
                 <?php endif; ?>
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Image</label>
-                <input type="file" class="form-control" name="image">
             </div>
             <button type="submit" class="btn btn-primary">Save</button>
             <a type="button" href="index.php?page=booklist" class="btn btn-primary">Back</a>
