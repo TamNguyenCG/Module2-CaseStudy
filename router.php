@@ -9,7 +9,7 @@ $action = isset($_REQUEST['action']) ? $_REQUEST['action'] : null;
 $controller = new BookController();
 $page = $_REQUEST['page'] ?? null;
 switch ($page){
-    case 'list':
+    case 'booklist':
         $controller->bookList();
         break;
 }

@@ -46,7 +46,7 @@ $auth->isLogin();
     <link rel="stylesheet" href="public/css/style.css">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
-<?php include_once "router.php"?>
+<?php include_once "router.php" ?>
 <div class="wrapper">
 
     <!-- Preloader -->
@@ -55,21 +55,17 @@ $auth->isLogin();
     </div>
 
     <!-- Navbar -->
-    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-        <?php include_once "resource/core/navbar.php" ?>
-    </nav>
+    <?php include_once "resource/core/navbar.php" ?>
     <!-- /.navbar -->
 
     <!-- Main Sidebar Container -->
-    <aside class="main-sidebar sidebar-dark-primary elevation-4">
-        <?php include_once "resource/core/sidebar.php" ?>
-    </aside>
+    <?php include_once "resource/core/sidebar.php" ?>
 
     <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
-        <?php include_once "resource/core/content.php"?>
+
+    <?php include_once "resource/core/content.php" ?>
         <!-- /.content -->
-    </div>
+
 
     <!-- /.content-wrapper -->
     <footer class="main-footer">
@@ -87,11 +83,6 @@ $auth->isLogin();
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
 <script src="public/js/jquery-ui.min.js"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-    $.widget.brid
-    ge('uibutton', $.ui.button)
-</script>
 <!-- Bootstrap 4 -->
 <script src="public/js/bootstrap.bundle.min.js"></script>
 <!-- ChartJS -->

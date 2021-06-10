@@ -12,7 +12,7 @@ class Model
 
     public function __construct(string $table, string $field)
     {
-        $connection = new DBConnection("mysql:host=localhost;dbname=bookstore","root","Hai.01111999");
+        $connection = new DBConnection("mysql:host=localhost;dbname=bookstore","root","@Tambeo91");
         $this->connection = $connection->connect();
         $this->table = $table;
         $this->field = $field;
@@ -20,7 +20,7 @@ class Model
 
     public function getAllData(): array
     {
-        $sql = "select `$this->field` from `$this->table`";
+        $sql = "select $this->field from $this->table";
         $stmt = $this->connection->query($sql);
         return $stmt->fetchAll();
     }
