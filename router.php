@@ -50,6 +50,9 @@ switch ($page) {
         $auth = new AuthController();
         $auth->logout();
         break;
+    case "searchAuthor":
+        $authorController->searchAuthor();
+        break;
     default:
         $home = new HomeController();
         $home->showDashBoard();

@@ -66,6 +66,19 @@ class AuthorDB extends Model
         }
         return $authors;
     }
+    public function check($value): array
+    {
+        $sql = "SELECT * FROM `$this->table` WHERE `name` LIKE "."'%".$value."%"."'; ";
+        $stmt = $this->connection->query($sql);
+        $result = $stmt->fetchAll();
+        $authors = [];
+        foreach ($result as $item){
+            $author = new Author($item);
+            $author->setId($item['id']);
+            $authors[] = $author;
+        }
+        return $authors;
+    }
 
 
 }
