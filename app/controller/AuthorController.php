@@ -1,7 +1,10 @@
 <?php
+
+
 namespace App\Controller;
 
-class Controller
+
+class AuthorController
 {
 
 }
