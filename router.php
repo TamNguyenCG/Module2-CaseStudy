@@ -28,6 +28,9 @@ switch ($page) {
     case 'detail':
         $controller->getBookDetail();
         break;
+    case 'recommend':
+        $controller->bookRecommend();
+        break;
 // Author Function
     case 'author':
         $authorController->authorList();

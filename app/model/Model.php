@@ -44,4 +44,11 @@ class Model
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public function recommend(): array
+    {
+        $sql = "SELECT * FROM $this->table WHERE recommend = 1";
+        $stmt = $this->connection->query($sql);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }

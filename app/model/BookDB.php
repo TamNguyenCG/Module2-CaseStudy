@@ -108,6 +108,17 @@ class BookDB extends Model
         $stmt->bindParam(10,$book->amount);
         $stmt->bindParam(11,$id);
         return $stmt->execute();
+    }
 
+    public function recommendBook(): array
+    {
+        $result = $this->recommend();
+        $books = [];
+        foreach ($result as $item) {
+            $book = new Book($item);
+            $book->id = $item['id'];
+            $books[] = $book;
+        }
+        return $books;
     }
 }

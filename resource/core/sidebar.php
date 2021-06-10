@@ -42,7 +42,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="index.php?page=recommend" class="nav-link">
                     <i class="far fa-thumbs-up"></i>
                     <p>
                         Recommended
@@ -144,7 +144,7 @@
                 <a href="#" class="nav-link">
                     <i class="fas fa-book"></i>
                     <p>
-                        Books
+                        Book
                         <i class="fas fa-angle-left right"></i>
                     </p>
                 </a>
@@ -155,10 +155,10 @@
                             <p>Book's List</p>
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <!--<li class="nav-item">
                         <a href="" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>DataTables</p>
+                            <p></p>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -166,7 +166,7 @@
                             <i class="far fa-circle nav-icon"></i>
                             <p>jsGrid</p>
                         </a>
-                    </li>
+                    </li>-->
                 </ul>
             </li>
             <li class="nav-item">
