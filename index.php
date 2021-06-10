@@ -1,13 +1,13 @@
 <?php
-/*session_start();*/
+session_start();
 
 use App\Midd\Auth;
 
 require_once "vendor/autoload.php";
 
-/*$auth = new Auth();
+$auth = new Auth();
 $auth->isLogin();
-*/
+
 
 ?>
 <!DOCTYPE html>

@@ -11,7 +11,7 @@ class Auth
     function isLogin()
     {
         if (!isset($_SESSION['userLogin'])) {
-            header('Location: resorce/views/pages/login.php');
+            header('Location: resource/pages/login.php');
         }
     }
 }
