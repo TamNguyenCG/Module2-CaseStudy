@@ -6,7 +6,6 @@
          style="opacity: .8">
     <span class="brand-text font-weight-light">Phantasmal Dream</span>
 </a>
-
 <!-- Sidebar -->
 <div class="sidebar">
     <!-- Sidebar user panel (optional) -->
@@ -18,7 +17,6 @@
             <a href="#" class="d-block">DarkVioletFairy</a>
         </div>
     </div>
-
     <!-- SidebarSearch Form -->
     <div class="form-inline">
         <div class="input-group" data-widget="sidebar-search">
@@ -30,7 +28,6 @@
             </div>
         </div>
     </div>
-
     <!-- Sidebar Menu -->
     <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -152,7 +149,6 @@
                     </p>
                 </a>
                 <ul class="nav nav-treeview">
-
                     <li class="nav-item">
                         <a href="index.php?page=booklist" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>

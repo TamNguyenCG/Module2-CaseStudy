@@ -9,7 +9,6 @@ require_once "vendor/autoload.php";
 $auth = new Auth();
 $auth->isLogin();
 
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -69,15 +68,6 @@ $auth->isLogin();
         <?php include_once "router.php" ?>
     </div>
 
-    <!-- /.content -->
-
-
-    <!-- /.content -->
-
-
-    <!-- /.content-wrapper -->
-    <footer class="main-footer">
-    </footer>
 
     <!-- Control Sidebar -->
     <aside class="control-sidebar control-sidebar-dark">
