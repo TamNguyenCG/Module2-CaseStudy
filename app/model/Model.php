@@ -20,7 +20,7 @@ class Model
 
     public function getAllData(): array
     {
-        $sql = "select $this->field from $this->table";
+        $sql = "SELECT $this->field FROM $this->table";
         $stmt = $this->connection->query($sql);
         return $stmt->fetchAll();
     }
