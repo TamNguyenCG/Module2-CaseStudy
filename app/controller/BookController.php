@@ -134,4 +134,10 @@ class BookController
             }
         }
     }
+
+    public function bookRecommend()
+    {
+        $books = $this->bookDB->recommendBook();
+        include_once "resource/views/book/recommend.php";
+    }
 }
