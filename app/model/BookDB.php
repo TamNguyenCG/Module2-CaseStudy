@@ -57,4 +57,22 @@ class BookDB extends Model
     {
         $this->delete($id);
     }
+
+    public function searchByName($text): array
+    {
+        $sql = "select $this->files from $this->table where `name` like :text";
+        $stmt = $this->connection->prepare($sql);
+        $txt = '%' . $text . '%';
+        $stmt->bindParam(':text', $txt);
+        $stmt->execute();
+        $result = $stmt->fetchAll();
+
+        $products = [];
+        foreach ($result as $item) {
+            $product = new Book($item);
+            $product->id = $item['id'];
+            $products[] = $product;
+        }
+        return $products;
+    }
 }

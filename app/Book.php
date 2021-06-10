@@ -16,7 +16,7 @@ class Book
     public string $license;
     public int $sold;
     public int $amount;
-//    public string $image;
+    public mixed $image;
 
     public function __construct($data)
     {
@@ -29,5 +29,6 @@ class Book
         $this->license = $data['license'];
         $this->sold = $data['sold'];
         $this->amount = $data['amount'];
+        $this->image = $data['image'];
     }
 }

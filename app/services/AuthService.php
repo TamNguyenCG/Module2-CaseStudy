@@ -2,15 +2,15 @@
 namespace App\Service;
 
 
-use App\Model\AuthModel;
+use App\Model\AuthDB;
 
 class AuthService
 {
-    protected $authModel;
+    protected AuthDB $authModel;
 
     public function __construct()
     {
-        $this->authModel = new AuthModel();
+        $this->authModel = new AuthDB();
     }
 
     function checkUserByEmailPassword($request): bool
