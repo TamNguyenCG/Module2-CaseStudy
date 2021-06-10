@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Model;
 
 use PDO;
@@ -8,7 +9,7 @@ class AuthModel
     protected PDO $connect;
     public function __construct()
     {
-        $database = new DBConnection("mysql:host=localhost;dbname=bookstore","root","Hai.01111999");
+        $database = new DBConnection("mysql:host=localhost;dbname=bookstore", "root", "Hai.01111999");
         $this->connect = $database->connect();
     }
 
@@ -27,7 +28,8 @@ class AuthModel
         return $stmt->execute();
     }
 
-    function findByEmailPassword($request) {
+    function findByEmailPassword($request)
+    {
         $sql = 'SELECT `id`, `name`, `email`, `role`, `phone`, `address`  FROM user WHERE email = ? AND password = ?';
         $stmt = $this->connect->prepare($sql);
         $stmt->bindParam(1, $request['email']);
