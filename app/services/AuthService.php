@@ -25,6 +25,6 @@ class AuthService
 
     function logout() {
         unset($_SESSION['userLogin']);
-        header('location: resource/views/pages/login.php');
+        header('Location: resource/pages/login.php');
     }
 }
