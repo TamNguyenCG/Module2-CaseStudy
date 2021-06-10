@@ -183,40 +183,15 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="index.php?page=logout" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>
-                                Login & Register
+                                Log out
                                 <i class="fas fa-angle-left right"></i>
                             </p>
                         </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Login</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Register</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Forgot Password</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Recover Password</p>
-                                </a>
-                            </li>
-                        </ul>
                     </li>
+                </ul>
     </nav>
     <!-- /.sidebar-menu -->
 </div>
