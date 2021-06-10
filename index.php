@@ -46,7 +46,6 @@ $auth->isLogin();
     <link rel="stylesheet" href="public/css/style.css">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
-<?php include_once "router.php" ?>
 <div class="wrapper">
 
     <!-- Preloader -->
@@ -62,9 +61,8 @@ $auth->isLogin();
     <?php include_once "resource/core/sidebar.php" ?>
 
     <!-- Content Wrapper. Contains page content -->
-
-    <?php include_once "resource/core/content.php" ?>
-        <!-- /.content -->
+    <?php include_once "router.php" ?>
+    <!-- /.content -->
 
 
     <!-- /.content-wrapper -->

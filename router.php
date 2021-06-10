@@ -2,14 +2,19 @@
 
 use App\Controller\AuthController;
 use App\Controller\BookController;
-use App\Controller\UserController;
+use App\Controller\HomeController;
 
-$page = isset($_REQUEST['page']) ? $_REQUEST['page'] : null;
-$action = isset($_REQUEST['action']) ? $_REQUEST['action'] : null;
 $controller = new BookController();
 $page = $_REQUEST['page'] ?? null;
 switch ($page){
     case 'booklist':
         $controller->bookList();
         break;
+    case 'logout':
+        $auth = new AuthController();
+        $auth->logout();
+        break;
+    default:
+        $home = new HomeController();
+        $home->showDashBoard();
 }

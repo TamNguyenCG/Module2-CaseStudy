@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <div class="login-wrap py-5" style="background-color: !important">
                     <div class="img d-flex align-items-center justify-content-center" style="background-image: url('../../public/css/mileka.png');"></div>
                     <h3 class="text-center mb-0">Welcome</h3>
-                    <p class="text-center">To the Phantasmal Dream's Bookstore</></p>
+                    <p class="text-center">To the Phantasmal Dream Bookstore</p>
                     <?php
                     if (isset($error)) :?>
                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -46,14 +46,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         </button>
                     </div>
                     <?php endif; ?>
-                    <form action="#" class="login-form">
+                    <form action="login.php" class="login-form" method="post">
                         <div class="form-group">
                             <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-user"></span></div>
-                            <input type="text" class="form-control" placeholder="Username" required>
+                            <input type="text" class="form-control" placeholder="Username" name="email" required >
                         </div>
                         <div class="form-group">
                             <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-lock"></span></div>
-                            <input type="password" class="form-control" placeholder="Password" required>
+                            <input type="password" class="form-control" placeholder="Password" name="password" required >
                         </div>
                         <div class="form-group d-md-flex">
                             <div class="w-100 text-md-right">
