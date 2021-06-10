@@ -19,6 +19,10 @@ switch ($page) {
         $auth = new AuthController();
         $auth->logout();
         break;
+    case 'register':
+        $auth = new AuthController();
+        $auth->getFormRegister();
+        break;
     case 'add':
         $controller->add();
         break;

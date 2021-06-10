@@ -123,3 +123,9 @@
     height: 800px;
     width: 1280px;
 }
+.register-container {
+    background-image: url("login/fantasy-library-background-wallpaper-67427-69736-hd-wallpapers.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}

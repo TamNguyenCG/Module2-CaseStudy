@@ -24,4 +24,14 @@ class AuthController
     {
         $this->authService->logout();
     }
+
+    public function getFormRegister()
+    {
+        header("Location: resource/pages/register.php");
+    }
+
+    public function register($request)
+    {
+       $this->authService->add($request);
+    }
 }
