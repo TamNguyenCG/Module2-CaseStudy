@@ -127,7 +127,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="index.php?page=author" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>All Authors</p>
                         </a>

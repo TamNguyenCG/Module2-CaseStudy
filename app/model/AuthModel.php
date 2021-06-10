@@ -8,7 +8,7 @@ class AuthModel
     protected PDO $connect;
     public function __construct()
     {
-        $database = new DBConnection("mysql:host=localhost;dbname=bookstore","root","@Tambeo91");
+        $database = new DBConnection("mysql:host=localhost;dbname=bookstore","root","Cubi@2712");
         $this->connect = $database->connect();
     }
 
