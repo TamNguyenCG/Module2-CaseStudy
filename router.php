@@ -44,6 +44,9 @@ switch ($page) {
     case "editAuthor":
         $authorController->edit();
         break;
+    case "searchAuthor":
+        $authorController->searchAuthor();
+        break;
     default:
         $home = new HomeController();
         $home->showDashBoard();

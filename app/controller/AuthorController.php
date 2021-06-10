@@ -86,6 +86,13 @@ public function deleteAuthor(){
         }
     }
     }
+    public function searchAuthor(){
+
+       $value = $_POST['searchAuthor'];
+       $authors = $this->authorDB->check($value);
+       include_once "resource/views/author/search.php";
+
+    }
 
 
 
