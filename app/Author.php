@@ -12,6 +12,7 @@ class Author
     public string $nationality;
     public string $linkWiki;
     public int $id;
+    public mixed $image;
 
     public function __construct($data){
         $this->name = $data['name'];
@@ -19,6 +20,7 @@ class Author
         $this->numberOfBooks = $data['published'];
         $this->nationality = $data['nationality'];
         $this->linkWiki = $data['wikipedia'];
+        $this->image = $data['image'];
     }
     public function setId($id){
         $this->id = $id;
