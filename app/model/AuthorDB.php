@@ -8,7 +8,7 @@ class AuthorDB extends Model
 {
 
     public string $table = 'authors';
-    public string $field = 'id,name,year,published,nationality,wikipedia';
+    public string $field = 'id,image,name,year,published,nationality,wikipedia';
 
     public function __construct()
     {
@@ -30,25 +30,27 @@ class AuthorDB extends Model
     }
     public function create(object $author): bool
     {
-        $sql = "INSERT INTO `$this->table` (name,year,published,nationality,wikipedia) VALUES (?,?,?,?,?)";
+        $sql = "INSERT INTO `$this->table` (image,name,year,published,nationality,wikipedia) VALUES (?,?,?,?,?,?)";
         $stmt = $this->connection->prepare($sql);
-        $stmt->bindParam(1,$author->name);
-        $stmt->bindParam(2,$author->dateOfBirth);
-        $stmt->bindParam(3,$author->numberOfBooks);
-        $stmt->bindParam(4,$author->nationality);
-        $stmt->bindParam(5,$author->linkWiki);
+        $stmt->bindParam(1, $author->image);
+        $stmt->bindParam(2,$author->name);
+        $stmt->bindParam(3,$author->dateOfBirth);
+        $stmt->bindParam(4,$author->numberOfBooks);
+        $stmt->bindParam(5,$author->nationality);
+        $stmt->bindParam(6,$author->linkWiki);
        return  $stmt->execute();
     }
     public function update($id,$author)
     {
-        $sql = "UPDATE `$this->table` SET name = ?,year = ?,published = ?,nationality = ?,wikipedia = ? WHERE id = ?";
+        $sql = "UPDATE `$this->table` SET image=?, name = ?,year = ?,published = ?,nationality = ?,wikipedia = ? WHERE id = ?";
         $stmt = $this->connection->prepare($sql);
-        $stmt->bindParam(1,$author->name);
-        $stmt->bindParam(2,$author->dateOfBirth);
-        $stmt->bindParam(3,$author->numberOfBooks);
-        $stmt->bindParam(4,$author->nationality);
-        $stmt->bindParam(5,$author->linkWiki);
-        $stmt->bindParam(6,$id);
+        $stmt->bindParam(1,$author->image);
+        $stmt->bindParam(2,$author->name);
+        $stmt->bindParam(3,$author->dateOfBirth);
+        $stmt->bindParam(4,$author->numberOfBooks);
+        $stmt->bindParam(5,$author->nationality);
+        $stmt->bindParam(6,$author->linkWiki);
+        $stmt->bindParam(7,$id);
         $stmt->execute();
     }
     public function getId($id): array

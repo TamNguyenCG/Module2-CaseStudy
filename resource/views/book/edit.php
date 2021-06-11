@@ -17,7 +17,7 @@
     <div class="card-header"><h2>Edit Product's Information</h2></div>
     <div>
         <form method="post" enctype="multipart/form-data">
-            <?php foreach ($books as $item): ?>
+            <?php foreach ($book as $item): ?>
                 <div class="mb-3">
                     <label class="form-label">Book Image</label>
                     <img width="150px" height="200px" src="<?php echo $item->image ?>">
