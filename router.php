@@ -32,7 +32,7 @@ switch ($page) {
         $controller->bookRecommend();
         break;
     case 'best_selling':
-        $controller->bestSellingBook();
+        $controller->bestSelling();
         break;
 // Author Function
     case 'author':

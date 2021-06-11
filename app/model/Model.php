@@ -14,7 +14,7 @@ class Model
 
     public function __construct(string $table, string $field)
     {
-        $connection = new DBConnection("mysql:host=localhost;dbname=bookstore","root","Hai.01111999");
+        $connection = new DBConnection("mysql:host=localhost;dbname=bookstore","root","@Tambeo91");
         $this->connection = $connection->connect();
         $this->table = $table;
         $this->field = $field;
@@ -54,7 +54,7 @@ class Model
 
     public function bestSelling(): array
     {
-        $sql = "SELECT * FROM $this->table WHERE best_selling = 1";
+        $sql = "SELECT * FROM $this->table WHERE bestSelling = 1";
         $stmt = $this->connection->query($sql);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
