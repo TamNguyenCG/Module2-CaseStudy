@@ -5,7 +5,7 @@
         </div>
         <div class="card-body">
             <div class="col-12">
-                <form method="post">
+                <form method="post" enctype="multipart/form-data">
                     <?php foreach ($authors as $author) : ?>
                         <div class="mb-3">
                             <label class="form-label">Name</label>
@@ -40,6 +40,11 @@
                             <?php if (isset($errors['wikipedia'])): ?>
                                 <p class="text-danger"><?php echo $errors['wikipedia'] ?></p>
                             <?php endif; ?>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Author Image</label>
+                            <img width="150px" height="200px" src="<?php echo $author->image ?>">
+                            <input type="file" class="form-control" name="image">
                         </div>
                     <?php endforeach; ?>
                     <button type="submit" class="btn btn-primary">Lưu</button>

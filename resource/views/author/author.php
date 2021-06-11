@@ -20,26 +20,28 @@
     </div>
 </div>
 
-<table class="table">
+<table class="table" style="text-align: center">
     <thead>
     <tr>
         <th scope="col">#</th>
+        <th scope="col">Author</th>
         <th scope="col">Name</th>
         <th scope="col">Year of birth</th>
         <th scope="col">Number of books</th>
         <th scope="col">Nationality</th>
-        <th scope="col">Link wiki</th>
+<!--        <th scope="col">Link wiki</th>-->
     </tr>
     </thead>
     <tbody>
     <?php foreach ($authors as $key => $author): ?>
     <tr>
-        <th scope="row"><?php echo $author->id ?></th>
+        <th scope="row"><?php echo $key+1 ?></th>
+        <td><img width="150px" height="200px" src="<?php echo $author->image;?>"></td>
         <td><?php echo $author->name ?> </td>
         <td><?php echo $author->dateOfBirth ?> </td>
         <td><?php echo $author->numberOfBooks ?> </td>
         <td><?php echo $author->nationality ?> </td>
-        <td><?php echo $author->linkWiki ?> </td>
+<!--        <td>--><?php //echo $author->linkWiki ?><!-- </td>-->
         <td><a href="index.php?page=deleteAuthor&id=<?php echo $author->id; ?>"
                class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</a>
         </td>

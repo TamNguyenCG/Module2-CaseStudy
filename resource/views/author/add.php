@@ -5,7 +5,11 @@
         </div>
         <div class="card-body">
             <div class="col-12">
-                <form method="post">
+                <form method="post" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label class="form-label">Image</label>
+                        <input type="file" class="form-control" name="image">
+                    </div>
                     <div class="mb-3">
                         <label class="form-label">Name</label>
                         <input type="text" name="name" class="form-control">
@@ -15,14 +19,14 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Date of birth</label>
-                        <input type="number" class="form-control" name="year">
+                        <input type="text" class="form-control" name="year">
                         <?php if (isset($errors['year'])): ?>
                             <p class="text-danger"><?php echo $errors['year'] ?></p>
                         <?php endif; ?>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Number of books</label>
-                        <input type="number" class="form-control" name="published">
+                        <input type="text" class="form-control" name="published">
                         <?php if (isset($errors['published'])): ?>
                             <p class="text-danger"><?php echo $errors['published'] ?></p>
                         <?php endif; ?>
