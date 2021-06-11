@@ -140,4 +140,10 @@ class BookController
         $books = $this->bookDB->recommendBook();
         include_once "resource/views/book/recommend.php";
     }
+
+    public function bestSellingBook()
+    {
+        $books = $this->bookDB->bestSelling();
+        include_once "resource/views/book/bestSelling.php";
+    }
 }

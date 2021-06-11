@@ -81,7 +81,7 @@
                 <label class="form-label">Amount</label>
                 <input type="text" class="form-control" name="amount">
                 <?php if(isset($errors['amount'])): ?>
-                    <p class="text-danger"><?php echo $errors['amount'] ?></p>
+                    <p class="text-danger"><?php echo $errors['amount'] ?></p
                 <?php endif; ?>
             </div>
             <button type="submit" class="btn btn-primary">Save</button>

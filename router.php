@@ -31,6 +31,9 @@ switch ($page) {
     case 'recommend':
         $controller->bookRecommend();
         break;
+    case 'best_selling':
+        $controller->bestSellingBook();
+        break;
 // Author Function
     case 'author':
         $authorController->authorList();
@@ -44,6 +47,9 @@ switch ($page) {
     case "editAuthor":
         $authorController->edit();
         break;
+    case "searchAuthor":
+        $authorController->searchAuthor();
+        break;
 //User Function
     case 'register':
         $auth = new AuthController();
@@ -52,9 +58,6 @@ switch ($page) {
     case 'logout':
         $auth = new AuthController();
         $auth->logout();
-        break;
-    case "searchAuthor":
-        $authorController->searchAuthor();
         break;
     default:
         $home = new HomeController();

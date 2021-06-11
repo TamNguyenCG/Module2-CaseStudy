@@ -51,4 +51,12 @@ class Model
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function bestSelling(): array
+    {
+        $sql = "SELECT * FROM $this->table WHERE best_selling = 1";
+        $stmt = $this->connection->query($sql);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }

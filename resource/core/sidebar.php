@@ -51,7 +51,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="index.php?page=best_selling" class="nav-link">
                     <i class="fas fa-medal"></i>
                     <p>
                         Best-selling Book
