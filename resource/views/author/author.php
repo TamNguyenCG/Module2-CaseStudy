@@ -8,19 +8,20 @@
     <title>Document</title>
 </head>
 <body>
-<form class="d-flex" method="post">
-<input class="form-control me-2"  name="searchAuthor" placeholder="Search" aria-label="Search">
-<a href="index.php?page=searchAuthor" <button class="btn btn-outline-success" type="submit" >Search</button></a>
-</form>
+<div class="row" style="margin-top: 10px">
+    <div class="col-6">
+        <a class="btn btn-success mb-2" href="index.php?page=addAuthor">Add</a>
+    </div>
+    <div class="col-6">
+        <form class="d-flex" method="post" action="index.php?page=searchAuthor">
+            <input class="form-control me-2"  name="searchAuthor" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit" >Search</button>
+        </form>
+    </div>
+</div>
+
 <table class="table">
     <thead>
-     <tr>
-         <td><a class="btn btn-success mb-2" href="index.php?page=addAuthor">Add</a></td>
-         <td></td>
-         <td></td>
-         <td></td>
-         <td></td>
-     </tr>
     <tr>
         <th scope="col">#</th>
         <th scope="col">Name</th>
