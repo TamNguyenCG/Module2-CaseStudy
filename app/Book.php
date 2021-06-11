@@ -17,6 +17,9 @@ class Book
     public string $license;
     public int $sold;
     public int $amount;
+    public string $recommend;
+    public string $selling;
+
 
     public function __construct($data)
     {
@@ -30,5 +33,7 @@ class Book
         $this->license = $data['license'];
         $this->sold = $data['sold'];
         $this->amount = $data['amount'];
+        $this->recommend = $data['recommend'];
+        $this->selling = $data['selling'];
     }
 }

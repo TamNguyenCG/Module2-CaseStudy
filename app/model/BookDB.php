@@ -9,7 +9,7 @@ use PDO;
 class BookDB extends Model
 {
     public string $table = 'books';
-    public string $files = 'id, image, name, publish, republish, ISBN, summary, publisher, license, sold, amount';
+    public string $files = 'id, image, name, publish, republish, ISBN, summary, publisher, license, sold, amount, recommend, selling';
 
     public function __construct()
     {
@@ -30,8 +30,8 @@ class BookDB extends Model
 
     public function bookCreate(object $book): bool
     {
-        $sql = "INSERT INTO $this->table (image ,name, publish, republish, summary, publisher, license, sold, amount) 
-                                        VALUES (?,?,?,?,?,?,?,?,?)";
+        $sql = "INSERT INTO $this->table (image ,name, publish, republish, summary, publisher, license, sold, amount, recommend, selling) 
+                                        VALUES (?,?,?,?,?,?,?,?,?,?,?)";
         $stmt = $this->connection->prepare($sql);
         $stmt->bindParam(1, $book->image);
         $stmt->bindParam(2, $book->name);
@@ -42,6 +42,8 @@ class BookDB extends Model
         $stmt->bindParam(7, $book->license);
         $stmt->bindParam(8, $book->sold);
         $stmt->bindParam(9, $book->amount);
+        $stmt->bindParam(10, $book->recommend);
+        $stmt->bindParam(11, $book->selling);
         return $stmt->execute();
     }
 
@@ -93,7 +95,8 @@ class BookDB extends Model
     public function edit($id,$book): bool
     {
         $sql = "UPDATE $this->table SET image = ?, name=?, publish=?, republish=?, ISBN=?,
-                                        summary=?, publisher=?, license=?, sold=?, amount = ?
+                                        summary=?, publisher=?, license=?, sold=?, amount = ?,
+                                        recommend = ?, selling = ?
                                     WHERE id =?";
         $stmt = $this->connection->prepare($sql);
         $stmt->bindParam(1,$book->image);
@@ -106,7 +109,9 @@ class BookDB extends Model
         $stmt->bindParam(8,$book->license);
         $stmt->bindParam(9,$book->sold);
         $stmt->bindParam(10,$book->amount);
-        $stmt->bindParam(11,$id);
+        $stmt->bindParam(11,$book->recommend);
+        $stmt->bindParam(12,$book->selling);
+        $stmt->bindParam(13,$id);
         return $stmt->execute();
     }
 

@@ -17,7 +17,7 @@
     <div class="card-header"><h2>Edit Product's Information</h2></div>
     <div>
         <form method="post" enctype="multipart/form-data">
-            <?php foreach ($book as $item): ?>
+            <?php foreach ($books as $item): ?>
                 <div class="mb-3">
                     <label class="form-label">Book Image</label>
                     <img width="150px" height="200px" src="<?php echo $item->image ?>">
@@ -84,6 +84,20 @@
                     <input type="text" class="form-control" name="amount" value="<?php echo $item->amount?>">
                     <?php if(isset($errors['amount'])): ?>
                         <p class="text-danger"><?php echo $errors['amount'] ?></p>
+                    <?php endif; ?>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Recommend</label>
+                    <input type="text" class="form-control" name="recommend" value="<?php echo $item->recommend?>">
+                    <?php if(isset($errors['recommend'])): ?>
+                        <p class="text-danger"><?php echo $errors['recommend'] ?></p
+                    <?php endif; ?>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Best-selling</label>
+                    <input type="text" class="form-control" name="selling" value="<?php echo $item->selling?>">
+                    <?php if(isset($errors['selling'])): ?>
+                        <p class="text-danger"><?php echo $errors['selling'] ?></p
                     <?php endif; ?>
                 </div>
             <?php endforeach; ?>
