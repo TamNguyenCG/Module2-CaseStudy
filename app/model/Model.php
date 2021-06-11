@@ -14,7 +14,7 @@ class Model
 
     public function __construct(string $table, string $field)
     {
-        $connection = new DBConnection("mysql:host=localhost;dbname=bookstore","root","Cubi@2712");
+        $connection = new DBConnection("mysql:host=localhost;dbname=bookstore","root","@Tambeo91");
         $this->connection = $connection->connect();
         $this->table = $table;
         $this->field = $field;
@@ -47,6 +47,14 @@ class Model
     public function recommend(): array
     {
         $sql = "SELECT * FROM $this->table WHERE recommend = 1";
+        $stmt = $this->connection->query($sql);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function bestSelling(): array
+    {
+        $sql = "SELECT * FROM $this->table WHERE bestSelling = 1";
         $stmt = $this->connection->query($sql);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);

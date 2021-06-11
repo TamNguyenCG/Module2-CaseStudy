@@ -121,4 +121,16 @@ class BookDB extends Model
         }
         return $books;
     }
+
+    public function bestSellingBook(): array
+    {
+        $result = $this->bestSelling();
+        $books = [];
+        foreach ($result as $item) {
+            $book = new Book($item);
+            $book->id = $item['id'];
+            $books[] = $book;
+        }
+        return $books;
+    }
 }
