@@ -5,7 +5,7 @@ namespace App\Controller;
 use App\Book;
 use App\Model\BookDB;
 
-class BookController
+class BookController extends Controller
 {
     public BookDB $bookDB;
 
@@ -78,6 +78,7 @@ class BookController
 
     public function bookAdd()
     {
+        $this->checkPermission();
         if ($_SERVER["REQUEST_METHOD"] == "GET") {
             include "resource/views/book/add.php";
         } else {
@@ -94,6 +95,7 @@ class BookController
 
     public function bookDelete()
     {
+        $this->checkPermission();
         $id = $_REQUEST['id'];
         $imgName = $this->bookDB->getImgNameById($id);
         if (file_exists($imgName['image'])) {
@@ -118,6 +120,7 @@ class BookController
 
     public function bookEdit()
     {
+        $this->checkPermission();
         $id = $_REQUEST['id'];
         $books = $this->bookDB->getDetailByID($id);
 
