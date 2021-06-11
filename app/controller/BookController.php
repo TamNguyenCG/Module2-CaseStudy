@@ -47,6 +47,8 @@ class BookController extends Controller
         $license = $_POST['license'];
         $sold = $_POST['sold'];
         $amount = $_POST['amount'];
+        $recommend = $_POST['recommend'];
+        $selling = $_POST['selling'];
 
         $data = [
             'image' => $image,
@@ -58,7 +60,9 @@ class BookController extends Controller
             'publisher' => $publisher,
             'license' => $license,
             'sold' => $sold,
-            'amount' => $amount
+            'amount' => $amount,
+            'recommend' => $recommend,
+            'selling' => $selling
         ];
         return new Book($data);
     }
@@ -66,7 +70,7 @@ class BookController extends Controller
     public function error(): array
     {
         $errors = [];
-        $fields = ['name', 'publish', 'republish', "ISBN", 'summary', 'publisher', 'license', 'sold', 'amount'];
+        $fields = ['name', 'publish', 'republish', "ISBN", 'summary', 'publisher', 'license', 'sold', 'amount', 'recommend', 'selling'];
 
         foreach ($fields as $field) {
             if (empty($_POST[$field])) {
@@ -130,7 +134,7 @@ class BookController extends Controller
             $errors = $this->error();
             if (empty($errors)) {
                 $book = $this->bookObj();
-                $this->bookDB->edit($id,$book);
+                $this->bookDB->edit($id, $book);
                 header("location: index.php?page=booklist");
             } else {
                 include "resource/views/book/edit.php";
@@ -142,5 +146,11 @@ class BookController extends Controller
     {
         $books = $this->bookDB->recommendBook();
         include_once "resource/views/book/recommend.php";
+    }
+
+    public function bestSelling()
+    {
+        $books = $this->bookDB->bestSellingBook();
+        include_once "resource/views/book/bestSelling.php";
     }
 }

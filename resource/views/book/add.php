@@ -81,7 +81,21 @@
                 <label class="form-label">Amount</label>
                 <input type="text" class="form-control" name="amount">
                 <?php if(isset($errors['amount'])): ?>
-                    <p class="text-danger"><?php echo $errors['amount'] ?></p>
+                    <p class="text-danger"><?php echo $errors['amount'] ?></p
+                <?php endif; ?>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Recommend</label>
+                <input type="text" class="form-control" name="recommend" placeholder="Yes or No">
+                <?php if(isset($errors['recommend'])): ?>
+                    <p class="text-danger"><?php echo $errors['recommend'] ?></p
+                <?php endif; ?>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Best-selling</label>
+                <input type="text" class="form-control" name="selling" placeholder="Yes or No">
+                <?php if(isset($errors['selling'])): ?>
+                    <p class="text-danger"><?php echo $errors['selling'] ?></p
                 <?php endif; ?>
             </div>
             <button type="submit" class="btn btn-primary">Save</button>

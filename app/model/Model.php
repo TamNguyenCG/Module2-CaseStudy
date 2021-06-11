@@ -46,7 +46,15 @@ class Model
 
     public function recommend(): array
     {
-        $sql = "SELECT * FROM $this->table WHERE recommend = 1";
+        $sql = "SELECT * FROM $this->table WHERE recommend = 'yes'";
+        $stmt = $this->connection->query($sql);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function bestSelling(): array
+    {
+        $sql = "SELECT * FROM $this->table WHERE selling = 'yes'";
         $stmt = $this->connection->query($sql);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);

@@ -10,18 +10,18 @@
 <body>
 <div class="col-12 col-sm-12 row mb-2">
     <?php foreach ($books as $item): ?>
-        <div class="col-sm-3" style="margin-top: 10px">
-            <div class="card text-center grow">
+        <div class="col-sm-3 grow" style="margin-top: 10px">
+            <div class="card text-center">
                 <!--            <div class="card-header">-->
                 <!---->
                 <!--            </div>-->
-                <div >
+                <div>
                     <a href="index.php?page=detail&id=<?php echo $item->id ?>">
-                        <div class="card-body" >
+                        <div class="card-body">
                             <img src="<?php echo $item->image ?>" style="width: 70% ; height: 200px"/>
                         </div>
                         <div class="card-header">
-                            <?php echo $item->name ?> <span class="right badge badge-danger">New</span>
+                            <?php echo $item->name ?> <span class="right badge badge-danger">Hot</span>
                         </div>
                     </a>
                 </div>
@@ -43,4 +43,3 @@
         transition: 1s ease;
     }
 </style>
-

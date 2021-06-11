@@ -31,6 +31,9 @@ switch ($page) {
     case 'recommend':
         $controller->bookRecommend();
         break;
+    case 'best_selling':
+        $controller->bestSelling();
+        break;
 // Author Function
     case 'author':
         $authorController->authorList();
@@ -47,6 +50,7 @@ switch ($page) {
     case "searchAuthor":
         $authorController->searchAuthor();
         break;
+
     case "detailAuthor":
         $authorController->detail();
         break;
