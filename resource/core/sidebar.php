@@ -14,7 +14,7 @@
             <img src="public/css/bookgirl.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-            <a href="#" class="d-block">DarkVioletFairy</a>
+            <a href="#" class="d-block"><?php echo $_SESSION['userLogin']['name'] ?></a>
         </div>
     </div>
     <!-- SidebarSearch Form -->
