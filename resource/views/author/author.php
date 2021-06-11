@@ -46,8 +46,10 @@
                class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</a>
         </td>
         <td><a href="index.php?page=editAuthor&id=<?php echo $author->id; ?>"
-               class="btn btn-danger btn-dark" >Edit</a>
-
+               class="btn btn-danger btn-sm" >Edit</a>
+        </td>
+        <td><a href="index.php?page=detailAuthor&id=<?php echo $author->id; ?>"
+            class="btn btn-danger btn-danger">Detail</a>
         </td>
 
     </tr>

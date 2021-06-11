@@ -112,6 +112,9 @@ class AuthorController
         include_once "resource/views/author/search.php";
 
     }
-
-
+    public function detail(){
+        $id = $_GET['id'];
+        $authors = $this->authorDB->getId($id);
+        include_once "resource/views/author/detail.php";
+    }
 }
