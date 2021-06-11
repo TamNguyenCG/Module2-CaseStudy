@@ -7,7 +7,7 @@ class AuthDB extends Model
 {
 
     public string $table = 'user';
-    public string $userInfo = 'id, name, email,password, role, phone, address';
+    public string $userInfo = 'id, name, email, password, role, phone, address';
     public function __construct()
     {
         parent::__construct($this->table, $this->userInfo);
