@@ -1,5 +1,5 @@
 <!-- Main content -->
-<section class="content">
+<section class="content" style="margin-top: 10px">
     <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="row">

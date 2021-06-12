@@ -35,10 +35,9 @@ class BookController extends Controller
         return $target_file;
     }
 
-    public function randNumberToString(): string
+    public function randNumberToString($length): string
     {
         $array = [];
-        $length = 12;
         for($i = 0; $i < $length; $i++){
             $rand = rand(0,9);
             array_push($array,$rand);
@@ -48,23 +47,19 @@ class BookController extends Controller
 
     public function MXBNumber(): string
     {
-        $array = [];
         $length = 9;
-        for ($i = 0; $i < $length; $i++) {
-            $rand = rand(0, 9);
-            array_push($array, $rand);
-        }
-        $string = implode("", $array);
+        $string = $this->randNumberToString($length);
         return "MXB-$string";
     }
 
     public function newBookObj(): Book
     {
+        $length = 12;
         $image = $this->uploadImage();
         $name = $_POST['name'];
         $publish = $_POST['publish'];
         $republish = $_POST['republish'];
-        $ISBN = $this->randNumberToString();
+        $ISBN = $this->randNumberToString($length);
         $summary = $_POST['summary'];
         $publisher = $_POST['publisher'];
         $license = $this->MXBNumber();
