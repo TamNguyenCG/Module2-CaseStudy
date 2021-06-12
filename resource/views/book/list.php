@@ -1,7 +1,7 @@
 <div class="col-12 col-md-12 mt-2">
     <div class="card">
         <div class="card-header">
-            <h1>Book's List</h1>
+            <a href="index.php?page=booklist" style="text-decoration: none"><h1>Book's List</h1></a>
             <div class="row">
                 <div class="col-6">
                     <?php if ($_SESSION['userLogin']['role'] == 'admin'): ?>
@@ -20,7 +20,7 @@
                 <table class="table table-bordered table-hover" style="margin-top: 10px">
                     <thead class="thead-dark">
                     <tr style="text-align: center">
-                        <th scope="col">STT</th>
+                        <th scope="col">No.</th>
                         <th scope="col">Book</th>
                         <th scope="col">Name</th>
                         <th scope="col">Publish Year</th>
