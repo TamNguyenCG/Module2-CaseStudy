@@ -3,10 +3,12 @@
 use App\Controller\AuthController;
 use App\Controller\BookController;
 use App\Controller\AuthorController;
+use App\Controller\CategoryController;
 use App\Controller\HomeController;
 
 $controller = new BookController();
 $authorController = new AuthorController();
+$cateController = new CategoryController();
 $page = $_REQUEST['page'] ?? null;
 switch ($page) {
 //Book Function
@@ -49,6 +51,19 @@ switch ($page) {
         break;
     case "searchAuthor":
         $authorController->searchAuthor();
+        break;
+//Category Function
+    case "editCate":
+        $cateController->cateEdit();
+        break;
+    case "deleteCate":
+        $cateController->cateDelete();
+        break;
+    case "detailCate":
+        $cateController->getCateDetail();
+        break;
+    case "searchCate":
+        $cateController->cateSearch();
         break;
 //User Function
     case 'register':

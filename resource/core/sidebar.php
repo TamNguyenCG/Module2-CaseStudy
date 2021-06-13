@@ -1,6 +1,9 @@
 <!-- Main Sidebar Container -->
 
 <!-- Brand Logo -->
+<?php $cateDB = new \App\Model\CategoryDB();
+$categories = $cateDB->getAllData();
+?>
 <a href="#" class="brand-link">
     <img src="public/css/mileka.png" alt="Bookstore Logo" class="brand-image img-circle elevation-3"
          style="opacity: .8">
@@ -79,30 +82,16 @@
                             </div>
                         </div>
                     </div>
+
+                    <?php foreach ($categories as $key => $item): ?>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="index.php?page=detailCate&id= <?php echo $item['id']?> " class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Romance</p>
+                            <p><?php echo $item['name']?></p>
+                            <span class="right badge badge-primary"><?php echo $item['quantity']?></span>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Education</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Action</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Horror</p>
-                        </a>
-                    </li>
+                    <?php endforeach; ?>
                 </ul>
             </li>
             <li class="nav-item">
