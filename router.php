@@ -50,6 +50,10 @@ switch ($page) {
     case "searchAuthor":
         $authorController->searchAuthor();
         break;
+
+    case "detailAuthor":
+        $authorController->detail();
+        break;
 //User Function
     case 'register':
         $auth = new AuthController();

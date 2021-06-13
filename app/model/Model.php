@@ -14,7 +14,9 @@ class Model
 
     public function __construct(string $table, string $field)
     {
-        $connection = new DBConnection("mysql:host=localhost;dbname=bookstore","root","@Tambeo91");
+
+        $connection = new DBConnection("mysql:host=localhost;dbname=bookstore","root","Cubi@2712");
+
         $this->connection = $connection->connect();
         $this->table = $table;
         $this->field = $field;
