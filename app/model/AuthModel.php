@@ -9,6 +9,7 @@ class AuthModel
     protected PDO $connect;
     public function __construct()
     {
+
         $database = new DBConnection("mysql:host=localhost;dbname=bookstore", "root", "Cubi@2712");
         $this->connect = $database->connect();
     }
@@ -38,3 +39,6 @@ class AuthModel
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 }
+
+
+

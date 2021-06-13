@@ -19,8 +19,8 @@
         <div class="navbar-search-block">
             <form class="form-inline">
                 <div class="input-group input-group-sm">
-                    <input class="form-control form-control-navbar" type="search" placeholder="Search"
-                           aria-label="Search">
+<!--                    <form class="d-flex" method="post" action="index.php?page=search">-->
+                    <input class="form-control form-control-navbar" name="search" placeholder="Search">
                     <div class="input-group-append">
                         <button class="btn btn-navbar" type="submit">
                             <i class="fas fa-search"></i>
@@ -29,6 +29,7 @@
                             <i class="fas fa-times"></i>
                         </button>
                     </div>
+<!--                    </form>-->
                 </div>
             </form>
         </div>

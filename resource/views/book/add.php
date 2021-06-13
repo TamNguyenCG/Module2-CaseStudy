@@ -43,13 +43,6 @@
                 <?php endif; ?>
             </div>
             <div class="mb-3">
-                <label class="form-label">ISBN Code</label>
-                <input type="text" class="form-control" name="ISBN">
-                <?php if(isset($errors['ISBN'])): ?>
-                    <p class="text-danger"><?php echo $errors['ISBN'] ?></p>
-                <?php endif; ?>
-            </div>
-            <div class="mb-3">
                 <label class="form-label">Summary</label>
                 <input type="text" class="form-control" name="summary">
                 <?php if(isset($errors['summary'])): ?>
@@ -63,13 +56,13 @@
                     <p class="text-danger"><?php echo $errors['publisher'] ?></p>
                 <?php endif; ?>
             </div>
-            <div class="mb-3">
-                <label class="form-label">License</label>
-                <input type="text" class="form-control" name="license">
-                <?php if(isset($errors['license'])): ?>
-                    <p class="text-danger"><?php echo $errors['license'] ?></p>
-                <?php endif; ?>
-            </div>
+<!--            <div class="mb-3">-->
+<!--                <label class="form-label">License</label>-->
+<!--                <input type="text" class="form-control" name="license">-->
+<!--                --><?php //if(isset($errors['license'])): ?>
+<!--                    <p class="text-danger">--><?php //echo $errors['license'] ?><!--</p>-->
+<!--                --><?php //endif; ?>
+<!--            </div>-->
             <div class="mb-3">
                 <label class="form-label">Sold</label>
                 <input type="text" class="form-control" name="sold">
