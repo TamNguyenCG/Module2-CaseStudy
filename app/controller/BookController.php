@@ -4,14 +4,17 @@ namespace App\Controller;
 
 use App\Book;
 use App\Model\BookDB;
+use App\Model\CategoryDB;
 
 class BookController extends Controller
 {
     public BookDB $bookDB;
+    public CategoryDB $cateDB;
 
     public function __construct()
     {
         $this->bookDB = new BookDB();
+        $this->cateDB = new CategoryDB();
     }
 
     public function bookList()
@@ -25,13 +28,6 @@ class BookController extends Controller
         $id = $_REQUEST['id'];
         $books = $this->bookDB->getDetailByID($id);
         include_once "resource/views/book/detail.php";
-    }
-
-    public function getBookByCategory()
-    {
-        $action = $_REQUEST['action'];
-        $books = $this->bookDB->getCategoryIdData($action);
-        include_once "resource/views/category/romance.php";
     }
 
     public function uploadImage(): string
@@ -64,7 +60,6 @@ class BookController extends Controller
         $length = 12;
         $image = $this->uploadImage();
         $name = $_POST['name'];
-        $categories_id = $_POST['categories_id'];
         $publish = $_POST['publish'];
         $republish = $_POST['republish'];
         $ISBN = $this->randNumberToString($length);
@@ -75,11 +70,11 @@ class BookController extends Controller
         $amount = $_POST['amount'];
         $recommend = $_POST['recommend'];
         $selling = $_POST['selling'];
+        $categoryId = $_POST['categoryId'];
 
         $data = [
             'image' => $image,
             'name' => $name,
-            'categories_id' => $categories_id,
             'publish' => $publish,
             'republish' => $republish,
             'ISBN' => $ISBN,
@@ -89,7 +84,8 @@ class BookController extends Controller
             'sold' => $sold,
             'amount' => $amount,
             'recommend' => $recommend,
-            'selling' => $selling
+            'selling' => $selling,
+            'categoryId' => $categoryId
         ];
         return new Book($data);
     }
@@ -98,7 +94,6 @@ class BookController extends Controller
     {
         $image = $this->uploadImage();
         $name = $_POST['name'];
-        $categories_id = $_POST['categories_id'];
         $publish = $_POST['publish'];
         $republish = $_POST['republish'];
         $ISBN = $this->newBookObj()->ISBN;
@@ -109,11 +104,11 @@ class BookController extends Controller
         $amount = $_POST['amount'];
         $recommend = $_POST['recommend'];
         $selling = $_POST['selling'];
+        $categoryId = $_POST['categoryId'];
 
         $data = [
             'image' => $image,
             'name' => $name,
-            'categories_id' => $categories_id,
             'publish' => $publish,
             'republish' => $republish,
             'ISBN' => $ISBN,
@@ -123,7 +118,8 @@ class BookController extends Controller
             'sold' => $sold,
             'amount' => $amount,
             'recommend' => $recommend,
-            'selling' => $selling
+            'selling' => $selling,
+            'categoryId' => $categoryId
         ];
         return new Book($data);
     }
@@ -131,7 +127,7 @@ class BookController extends Controller
     public function error(): array
     {
         $errors = [];
-        $fields = ['name','categories_id', 'publish', 'republish', 'summary', 'publisher', 'sold', 'amount', 'recommend', 'selling'];
+        $fields = ['name', 'publish', 'republish', 'summary', 'publisher', 'sold', 'amount', 'recommend', 'selling','categoryId'];
 
         foreach ($fields as $field) {
             if (empty($_POST[$field])) {
@@ -144,6 +140,7 @@ class BookController extends Controller
     public function bookAdd()
     {
         $this->checkPermission();
+        $categories = $this->cateDB->getAllData();
         if ($_SERVER["REQUEST_METHOD"] == "GET") {
             include "resource/views/book/add.php";
         } else {
@@ -186,6 +183,7 @@ class BookController extends Controller
     public function bookEdit()
     {
         $this->checkPermission();
+        $categories = $this->cateDB->getAllData();
         $id = $_REQUEST['id'];
         $books = $this->bookDB->getDetailByID($id);
 

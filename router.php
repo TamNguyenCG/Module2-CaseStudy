@@ -8,9 +8,8 @@ use App\Controller\HomeController;
 
 $controller = new BookController();
 $authorController = new AuthorController();
-
+$cateController = new CategoryController();
 $page = $_REQUEST['page'] ?? null;
-$action = $_REQUEST['action'] ?? null;
 switch ($page) {
 //Book Function
     case 'add':
@@ -53,14 +52,21 @@ switch ($page) {
     case "searchAuthor":
         $authorController->searchAuthor();
         break;
-//Categories
-    case "categories":
-//        $cateController = new CategoryController();
-        switch ($action) {
-            case "1":
-                $controller->getBookByCategory();
-                break;
-        }
+//Category Function
+    case "addCate" :
+        $cateController->add();
+        break;
+    case "editCate":
+        $cateController->cateEdit();
+        break;
+    case "deleteCate":
+        $cateController->cateDelete();
+        break;
+    case "detailCate":
+        $cateController->getCateDetail();
+        break;
+    case "searchCate":
+        $cateController->cateSearch();
         break;
 //User Function
     case 'register':

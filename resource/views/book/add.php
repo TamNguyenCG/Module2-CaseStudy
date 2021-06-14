@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        .form-control{
+        .form-control {
             width: 30%;
         }
     </style>
@@ -24,75 +24,84 @@
             <div class="mb-3">
                 <label class="form-label">Name</label>
                 <input type="text" class="form-control" name="name">
-                <?php if(isset($errors['name'])): ?>
+                <?php if (isset($errors['name'])): ?>
                     <p class="text-danger"><?php echo $errors['name'] ?></p>
-                <?php endif; ?>
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Category</label>
-                <select name="category">
-                    <?php  ?>
-                    <option value=""></option>
-                </select>
-                <?php if(isset($errors['category'])): ?>
-                    <p class="text-danger"><?php echo $errors['category'] ?></p>
                 <?php endif; ?>
             </div>
             <div class="mb-3">
                 <label class="form-label">Publish Year</label>
                 <input type="text" class="form-control" name="publish">
-                <?php if(isset($errors['publish'])): ?>
+                <?php if (isset($errors['publish'])): ?>
                     <p class="text-danger"><?php echo $errors['publish'] ?></p>
                 <?php endif; ?>
             </div>
             <div class="mb-3">
                 <label class="form-label">Republish</label>
                 <input type="text" class="form-control" name="republish">
-                <?php if(isset($errors['republish'])): ?>
+                <?php if (isset($errors['republish'])): ?>
                     <p class="text-danger"><?php echo $errors['republish'] ?></p>
                 <?php endif; ?>
             </div>
             <div class="mb-3">
                 <label class="form-label">Summary</label>
                 <input type="text" class="form-control" name="summary">
-                <?php if(isset($errors['summary'])): ?>
+                <?php if (isset($errors['summary'])): ?>
                     <p class="text-danger"><?php echo $errors['summary'] ?></p>
                 <?php endif; ?>
             </div>
             <div class="mb-3">
                 <label class="form-label">Publisher</label>
                 <input type="text" class="form-control" name="publisher">
-                <?php if(isset($errors['publisher'])): ?>
+                <?php if (isset($errors['publisher'])): ?>
                     <p class="text-danger"><?php echo $errors['publisher'] ?></p>
                 <?php endif; ?>
             </div>
+            <!--            <div class="mb-3">-->
+            <!--                <label class="form-label">License</label>-->
+            <!--                <input type="text" class="form-control" name="license">-->
+            <!--                --><?php //if(isset($errors['license'])): ?>
+            <!--                    <p class="text-danger">--><?php //echo $errors['license'] ?><!--</p>-->
+            <!--                --><?php //endif; ?>
+            <!--            </div>-->
             <div class="mb-3">
                 <label class="form-label">Sold</label>
                 <input type="text" class="form-control" name="sold">
-                <?php if(isset($errors['sold'])): ?>
+                <?php if (isset($errors['sold'])): ?>
                     <p class="text-danger"><?php echo $errors['sold'] ?></p>
                 <?php endif; ?>
             </div>
             <div class="mb-3">
                 <label class="form-label">Amount</label>
                 <input type="text" class="form-control" name="amount">
-                <?php if(isset($errors['amount'])): ?>
+                <?php if (isset($errors['amount'])): ?>
                     <p class="text-danger"><?php echo $errors['amount'] ?></p
                 <?php endif; ?>
             </div>
             <div class="mb-3">
                 <label class="form-label">Recommend</label>
                 <input type="text" class="form-control" name="recommend" placeholder="Yes or No">
-                <?php if(isset($errors['recommend'])): ?>
+                <?php if (isset($errors['recommend'])): ?>
                     <p class="text-danger"><?php echo $errors['recommend'] ?></p
                 <?php endif; ?>
             </div>
             <div class="mb-3">
                 <label class="form-label">Best-selling</label>
                 <input type="text" class="form-control" name="selling" placeholder="Yes or No">
-                <?php if(isset($errors['selling'])): ?>
+                <?php if (isset($errors['selling'])): ?>
                     <p class="text-danger"><?php echo $errors['selling'] ?></p
                 <?php endif; ?>
+            </div>
+            <div class="mb-3 ">
+                <label for="category">Select a category</label>
+                <select id="category" name="category">
+                    Categories
+                    <?php foreach ($categories as $key => $item): ?>
+                        <option value="<?php echo $item['name'] ?>" ><?php echo $item['name'] ?></option>
+                    <?php endforeach; ?>
+                    <?php if (isset($errors['categoryId'])): ?>
+                        <p class="text-danger"><?php echo $errors['CategoryId'] ?></p
+                    <?php endif; ?>
+                </select>
             </div>
             <button type="submit" class="btn btn-primary">Save</button>
             <a type="button" href="index.php?page=booklist" class="btn btn-primary">Back</a>
@@ -101,4 +110,8 @@
 </div>
 </body>
 </html>
+<style>
+    select {
 
+    }
+</style>

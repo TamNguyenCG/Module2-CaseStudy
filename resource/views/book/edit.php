@@ -1,3 +1,7 @@
+<?php
+use App\Model\CategoryDB;
+$cateDB = new CategoryDB();
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -99,6 +103,15 @@
                     <?php if(isset($errors['selling'])): ?>
                         <p class="text-danger"><?php echo $errors['selling'] ?></p
                     <?php endif; ?>
+                </div>
+                <div class="mb-3 dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                        <?php $category = $cateDB->getIdData($item->categoryId);
+                                echo $category[0]['name'];?>
+                        <ul class="dropdown-menu">
+                            <?php foreach ($categories as $key => $value): ?>
+                                <li class="dropdown-item" ><?php echo $value['name'] ?></li>
+                            <?php endforeach; ?>
                 </div>
             <?php endforeach; ?>
             <button type="submit" class="btn btn-primary">Edit</button>

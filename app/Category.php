@@ -1,19 +1,14 @@
 <?php
-
 namespace App;
 class Category
 {
-
-    /**
-     * @var mixed|string
-     */
-
-    public mixed $id;
-    public static string $name;
+    public string $name;
+    public int $quantity;
+    public int $id;
 
     public function __construct($data)
     {
-        $this->id = $data['id'];
-        self::$name = $data['name'];
+        $this->name = $data['name'];
+        $this->quantity = $data['quantity'];
     }
 }

@@ -1,6 +1,9 @@
 <!-- Main Sidebar Container -->
 
 <!-- Brand Logo -->
+<?php $cateDB = new \App\Model\CategoryDB();
+$categories = $cateDB->getAllData();
+?>
 <a href="#" class="brand-link">
     <img src="public/css/mileka.png" alt="Bookstore Logo" class="brand-image img-circle elevation-3"
          style="opacity: .8">
@@ -14,8 +17,7 @@
             <img src="public/css/bookgirl.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-            <a href="#" class="d-block"><?php echo $_SESSION['userLogin']['name']?><br>
-                                        <?php echo $_SESSION['userLogin']['role']?></a>
+            <a href="#" class="d-block"><?php echo $_SESSION['userLogin']['name'] ?></a>
         </div>
     </div>
     <!-- SidebarSearch Form -->
@@ -34,14 +36,14 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <!-- Add icons to the links using the .nav-icon class
                  with font-awesome or any other icon font library -->
-<!--            <li class="nav-item menu-open">-->
-<!--                <a href="#" class="nav-link active">-->
-<!--                    <i class="fa-solid fa-table-columns"></i>-->
-<!--                    <p>-->
-<!--                        Dashboard-->
-<!--                    </p>-->
-<!--                </a>-->
-<!--            </li>-->
+            <!--            <li class="nav-item menu-open">-->
+            <!--                <a href="#" class="nav-link active">-->
+            <!--                    <i class="fa-solid fa-table-columns"></i>-->
+            <!--                    <p>-->
+            <!--                        Dashboard-->
+            <!--                    </p>-->
+            <!--                </a>-->
+            <!--            </li>-->
             <li class="nav-item">
                 <a href="index.php?page=recommend" class="nav-link">
                     <i class="far fa-thumbs-up"></i>
@@ -68,7 +70,6 @@
                         <i class="right fas fa-angle-left"></i>
                     </p>
                 </a>
-
                 <ul class="nav nav-treeview">
                     <div class="form-inline">
                         <div class="input-group" data-widget="sidebar-search">
@@ -82,30 +83,15 @@
                         </div>
                     </div>
 
-                    <li class="nav-item">
-                        <a href="index.php?page=categories&action=1" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Romance</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="index.php?page=categories&action=2" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Education</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="index.php?page=categories&action=3" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Action</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="index.php?page=categories&action=4" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Horror</p>
-                        </a>
-                    </li>
+                    <?php foreach ($categories as $key => $item): ?>
+                        <li class="nav-item">
+                            <a href="index.php?page=detailCate&id= <?php echo $item['id']?> " class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p><?php echo $item['name']?></p>
+                                <span class="right badge badge-primary"><?php echo $item['quantity']?></span>
+                            </a>
+                        </li>
+                    <?php endforeach; ?>
                 </ul>
             </li>
             <li class="nav-item">
@@ -117,30 +103,30 @@
                     </p>
                 </a>
                 <ul class="nav nav-treeview">
-<!--                    <li class="nav-item">-->
-<!--                        <a href="#" class="nav-link">-->
-<!--                            <i class="far fa-circle nav-icon"></i>-->
-<!--                            <p>Top Authors</p>-->
-<!--                        </a>-->
-<!--                    </li>-->
-<!--                    <li class="nav-item">-->
-<!--                        <a href="#" class="nav-link">-->
-<!--                            <i class="far fa-circle nav-icon"></i>-->
-<!--                            <p>Nearly Published Author</p>-->
-<!--                        </a>-->
-<!--                    </li>-->
+                    <!--                    <li class="nav-item">-->
+                    <!--                        <a href="#" class="nav-link">-->
+                    <!--                            <i class="far fa-circle nav-icon"></i>-->
+                    <!--                            <p>Top Authors</p>-->
+                    <!--                        </a>-->
+                    <!--                    </li>-->
+                    <!--                    <li class="nav-item">-->
+                    <!--                        <a href="#" class="nav-link">-->
+                    <!--                            <i class="far fa-circle nav-icon"></i>-->
+                    <!--                            <p>Nearly Published Author</p>-->
+                    <!--                        </a>-->
+                    <!--                    </li>-->
                     <li class="nav-item">
                         <a href="index.php?page=author" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>All Authors</p>
                         </a>
                     </li>
-<!--                    <li class="nav-item">-->
-<!--                        <a href="#" class="nav-link">-->
-<!--                            <i class="far fa-circle nav-icon"></i>-->
-<!--                            <p>Validation</p>-->
-<!--                        </a>-->
-<!--                    </li>-->
+                    <!--                    <li class="nav-item">-->
+                    <!--                        <a href="#" class="nav-link">-->
+                    <!--                            <i class="far fa-circle nav-icon"></i>-->
+                    <!--                            <p>Validation</p>-->
+                    <!--                        </a>-->
+                    <!--                    </li>-->
                 </ul>
             </li>
             <li class="nav-item">
