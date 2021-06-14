@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-6">
                     <?php if ($_SESSION['userLogin']['role'] == 'admin'): ?>
-                    <a class="btn btn-success" href="index.php?page=add">Add New Book</a>
+                        <a class="btn btn-success" href="index.php?page=add">Add New Book</a>
                     <?php endif; ?>
                 </div>
                 <div class="col-6">
@@ -42,10 +42,10 @@
                                 <a type="button" href="index.php?page=detail&id=<?php echo $item->id ?>"
                                    class="btn btn-success">Detail</a>
                                 <?php if ($_SESSION['userLogin']['role'] == 'admin'): ?>
-                                <a type="button" href="index.php?page=edit&id=<?php echo $item->id ?>"
-                                   class="btn btn-success">Edit</a>
-                                <a type="button" href="index.php?page=delete&id=<?php echo $item->id ?>"
-                                   class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete</a>
+                                    <a type="button" href="index.php?page=edit&id=<?php echo $item->id ?>"
+                                       class="btn btn-success">Edit</a>
+                                    <a type="button" href="index.php?page=delete&id=<?php echo $item->id ?>"
+                                       class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete</a>
                                 <?php endif; ?>
                             </td>
                         </tr>
@@ -56,4 +56,3 @@
         </div>
     </div>
 </div>
-

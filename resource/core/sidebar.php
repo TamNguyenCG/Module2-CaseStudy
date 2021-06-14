@@ -36,14 +36,14 @@ $categories = $cateDB->getAllData();
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <!-- Add icons to the links using the .nav-icon class
                  with font-awesome or any other icon font library -->
-<!--            <li class="nav-item menu-open">-->
-<!--                <a href="#" class="nav-link active">-->
-<!--                    <i class="fa-solid fa-table-columns"></i>-->
-<!--                    <p>-->
-<!--                        Dashboard-->
-<!--                    </p>-->
-<!--                </a>-->
-<!--            </li>-->
+            <!--            <li class="nav-item menu-open">-->
+            <!--                <a href="#" class="nav-link active">-->
+            <!--                    <i class="fa-solid fa-table-columns"></i>-->
+            <!--                    <p>-->
+            <!--                        Dashboard-->
+            <!--                    </p>-->
+            <!--                </a>-->
+            <!--            </li>-->
             <li class="nav-item">
                 <a href="index.php?page=recommend" class="nav-link">
                     <i class="far fa-thumbs-up"></i>
@@ -84,13 +84,13 @@ $categories = $cateDB->getAllData();
                     </div>
 
                     <?php foreach ($categories as $key => $item): ?>
-                    <li class="nav-item">
-                        <a href="index.php?page=detailCate&id= <?php echo $item['id']?> " class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p><?php echo $item['name']?></p>
-                            <span class="right badge badge-primary"><?php echo $item['quantity']?></span>
-                        </a>
-                    </li>
+                        <li class="nav-item">
+                            <a href="index.php?page=detailCate&id= <?php echo $item['id']?> " class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p><?php echo $item['name']?></p>
+                                <span class="right badge badge-primary"><?php echo $item['quantity']?></span>
+                            </a>
+                        </li>
                     <?php endforeach; ?>
                 </ul>
             </li>
@@ -103,30 +103,30 @@ $categories = $cateDB->getAllData();
                     </p>
                 </a>
                 <ul class="nav nav-treeview">
-<!--                    <li class="nav-item">-->
-<!--                        <a href="#" class="nav-link">-->
-<!--                            <i class="far fa-circle nav-icon"></i>-->
-<!--                            <p>Top Authors</p>-->
-<!--                        </a>-->
-<!--                    </li>-->
-<!--                    <li class="nav-item">-->
-<!--                        <a href="#" class="nav-link">-->
-<!--                            <i class="far fa-circle nav-icon"></i>-->
-<!--                            <p>Nearly Published Author</p>-->
-<!--                        </a>-->
-<!--                    </li>-->
+                    <!--                    <li class="nav-item">-->
+                    <!--                        <a href="#" class="nav-link">-->
+                    <!--                            <i class="far fa-circle nav-icon"></i>-->
+                    <!--                            <p>Top Authors</p>-->
+                    <!--                        </a>-->
+                    <!--                    </li>-->
+                    <!--                    <li class="nav-item">-->
+                    <!--                        <a href="#" class="nav-link">-->
+                    <!--                            <i class="far fa-circle nav-icon"></i>-->
+                    <!--                            <p>Nearly Published Author</p>-->
+                    <!--                        </a>-->
+                    <!--                    </li>-->
                     <li class="nav-item">
                         <a href="index.php?page=author" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>All Authors</p>
                         </a>
                     </li>
-<!--                    <li class="nav-item">-->
-<!--                        <a href="#" class="nav-link">-->
-<!--                            <i class="far fa-circle nav-icon"></i>-->
-<!--                            <p>Validation</p>-->
-<!--                        </a>-->
-<!--                    </li>-->
+                    <!--                    <li class="nav-item">-->
+                    <!--                        <a href="#" class="nav-link">-->
+                    <!--                            <i class="far fa-circle nav-icon"></i>-->
+                    <!--                            <p>Validation</p>-->
+                    <!--                        </a>-->
+                    <!--                    </li>-->
                 </ul>
             </li>
             <li class="nav-item">

@@ -84,4 +84,12 @@ class CategoryDB extends Model
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+    public function getIdByName($text)
+    {
+        $sql = "SELECT `id` FROM $this->table WHERE `name` = ?";
+        $stmt = $this->connection->prepare($sql);
+        $stmt->bindParam(1,$text);
+        $stmt->execute();
+        return  $stmt->fetch(PDO::FETCH_ASSOC);
+    }
 }

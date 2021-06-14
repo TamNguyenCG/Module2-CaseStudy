@@ -104,14 +104,17 @@ $cateDB = new CategoryDB();
                         <p class="text-danger"><?php echo $errors['selling'] ?></p
                     <?php endif; ?>
                 </div>
-                <div class="mb-3 dropdown">
-                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-                        <?php $category = $cateDB->getIdData($item->categoryId);
-                                echo $category[0]['name'];?>
-                        <ul class="dropdown-menu">
-                            <?php foreach ($categories as $key => $value): ?>
-                                <li class="dropdown-item" ><?php echo $value['name'] ?></li>
-                            <?php endforeach; ?>
+                <div class="mb-3 ">
+                    <label for="category">Select a category</label>
+                    <select id="category" name="categoryId">
+                        Categories
+                        <?php foreach ($categories as $item): ?>
+                            <option value="<?php echo $item['id'] ?>" ><?php echo $item['name'] ?></option>
+                        <?php endforeach; ?>
+                        <?php if (isset($errors['categoryId'])): ?>
+                            <p class="text-danger"><?php echo $errors['categoryId'] ?></p
+                        <?php endif; ?>
+                    </select>
                 </div>
             <?php endforeach; ?>
             <button type="submit" class="btn btn-primary">Edit</button>
