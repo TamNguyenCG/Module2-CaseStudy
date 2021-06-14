@@ -8,7 +8,7 @@ use App\Author;
 use App\Model\AuthorDB;
 use JetBrains\PhpStorm\Pure;
 
-class AuthorController
+class AuthorController extends Controller
 {
     public AuthorDB $authorDB;
 

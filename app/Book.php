@@ -9,6 +9,7 @@ class Book
     public int $id;
     public mixed $image;
     public string $name;
+    public string $categories;
     public int $publish;
     public int $republish;
     public mixed $ISBN;
@@ -25,6 +26,7 @@ class Book
     {
         $this->image = $data['image'];
         $this->name = $data['name'];
+        $this->categories = $data['categories_id'];
         $this->publish = $data['publish'];
         $this->republish = $data['republish'];
         $this->ISBN = $data['ISBN'];

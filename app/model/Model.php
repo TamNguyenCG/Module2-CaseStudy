@@ -44,6 +44,15 @@ class Model
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public function getCategoryIdData($action): array
+    {
+        $sql = "SELECT * FROM $this->table WHERE categories_id = ?";
+        $stmt = $this->connection->prepare($sql);
+        $stmt->bindParam(1,$action);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     public function recommend(): array
     {
         $sql = "SELECT * FROM $this->table WHERE recommend = 'yes'";

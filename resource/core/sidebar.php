@@ -14,7 +14,8 @@
             <img src="public/css/bookgirl.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-            <a href="#" class="d-block"><?php echo $_SESSION['userLogin']['name'] ?></a>
+            <a href="#" class="d-block"><?php echo $_SESSION['userLogin']['name']?><br>
+                                        <?php echo $_SESSION['userLogin']['role']?></a>
         </div>
     </div>
     <!-- SidebarSearch Form -->
@@ -67,6 +68,7 @@
                         <i class="right fas fa-angle-left"></i>
                     </p>
                 </a>
+
                 <ul class="nav nav-treeview">
                     <div class="form-inline">
                         <div class="input-group" data-widget="sidebar-search">
@@ -79,26 +81,27 @@
                             </div>
                         </div>
                     </div>
+
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="index.php?page=categories&action=1" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Romance</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="index.php?page=categories&action=2" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Education</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="index.php?page=categories&action=3" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Action</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="index.php?page=categories&action=4" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Horror</p>
                         </a>

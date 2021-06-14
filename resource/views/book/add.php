@@ -29,6 +29,16 @@
                 <?php endif; ?>
             </div>
             <div class="mb-3">
+                <label class="form-label">Category</label>
+                <select name="category">
+                    <?php  ?>
+                    <option value=""></option>
+                </select>
+                <?php if(isset($errors['category'])): ?>
+                    <p class="text-danger"><?php echo $errors['category'] ?></p>
+                <?php endif; ?>
+            </div>
+            <div class="mb-3">
                 <label class="form-label">Publish Year</label>
                 <input type="text" class="form-control" name="publish">
                 <?php if(isset($errors['publish'])): ?>
@@ -56,13 +66,6 @@
                     <p class="text-danger"><?php echo $errors['publisher'] ?></p>
                 <?php endif; ?>
             </div>
-<!--            <div class="mb-3">-->
-<!--                <label class="form-label">License</label>-->
-<!--                <input type="text" class="form-control" name="license">-->
-<!--                --><?php //if(isset($errors['license'])): ?>
-<!--                    <p class="text-danger">--><?php //echo $errors['license'] ?><!--</p>-->
-<!--                --><?php //endif; ?>
-<!--            </div>-->
             <div class="mb-3">
                 <label class="form-label">Sold</label>
                 <input type="text" class="form-control" name="sold">

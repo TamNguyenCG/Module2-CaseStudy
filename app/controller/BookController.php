@@ -27,6 +27,13 @@ class BookController extends Controller
         include_once "resource/views/book/detail.php";
     }
 
+    public function getBookByCategory()
+    {
+        $action = $_REQUEST['action'];
+        $books = $this->bookDB->getCategoryIdData($action);
+        include_once "resource/views/category/romance.php";
+    }
+
     public function uploadImage(): string
     {
         $target_dir = "public/image/";
@@ -57,6 +64,7 @@ class BookController extends Controller
         $length = 12;
         $image = $this->uploadImage();
         $name = $_POST['name'];
+        $categories_id = $_POST['categories_id'];
         $publish = $_POST['publish'];
         $republish = $_POST['republish'];
         $ISBN = $this->randNumberToString($length);
@@ -71,6 +79,7 @@ class BookController extends Controller
         $data = [
             'image' => $image,
             'name' => $name,
+            'categories_id' => $categories_id,
             'publish' => $publish,
             'republish' => $republish,
             'ISBN' => $ISBN,
@@ -89,6 +98,7 @@ class BookController extends Controller
     {
         $image = $this->uploadImage();
         $name = $_POST['name'];
+        $categories_id = $_POST['categories_id'];
         $publish = $_POST['publish'];
         $republish = $_POST['republish'];
         $ISBN = $this->newBookObj()->ISBN;
@@ -103,6 +113,7 @@ class BookController extends Controller
         $data = [
             'image' => $image,
             'name' => $name,
+            'categories_id' => $categories_id,
             'publish' => $publish,
             'republish' => $republish,
             'ISBN' => $ISBN,
@@ -120,7 +131,7 @@ class BookController extends Controller
     public function error(): array
     {
         $errors = [];
-        $fields = ['name', 'publish', 'republish', 'summary', 'publisher', 'sold', 'amount', 'recommend', 'selling'];
+        $fields = ['name','categories_id', 'publish', 'republish', 'summary', 'publisher', 'sold', 'amount', 'recommend', 'selling'];
 
         foreach ($fields as $field) {
             if (empty($_POST[$field])) {
