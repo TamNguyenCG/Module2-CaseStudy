@@ -17,7 +17,7 @@
                 <table class="table table-bordered table-hover" style="margin-top: 10px">
                     <thead class="thead-dark">
                     <tr style="text-align: center">
-                        <th scope="col">STT</th>
+                        <th scope="col">No.</th>
                         <th scope="col">Book</th>
 <!--                        <th scope="col">Name</th>-->
                         <th scope="col">Publish Year</th>

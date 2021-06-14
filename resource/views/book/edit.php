@@ -1,3 +1,7 @@
+<?php
+use App\Model\CategoryDB;
+$cateDB = new CategoryDB();
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -44,13 +48,13 @@
                         <p class="text-danger"><?php echo $errors['republish'] ?></p>
                     <?php endif; ?>
                 </div>
-                <div class="mb-3">
-                    <label class="form-label">ISBN Code</label>
-                    <input type="text" class="form-control" name="ISBN" value="<?php echo $item->ISBN?>">
-                    <?php if(isset($errors['ISBN'])): ?>
-                        <p class="text-danger"><?php echo $errors['ISBN'] ?></p>
-                    <?php endif; ?>
-                </div>
+<!--                <div class="mb-3">-->
+<!--                    <label class="form-label">ISBN Code</label>-->
+<!--                    <input type="text" class="form-control" name="ISBN" value="--><?php //echo $item->ISBN?><!--">-->
+<!--                    --><?php //if(isset($errors['ISBN'])): ?>
+<!--                        <p class="text-danger">--><?php //echo $errors['ISBN'] ?><!--</p>-->
+<!--                    --><?php //endif; ?>
+<!--                </div>-->
                 <div class="mb-3">
                     <label class="form-label">Summary</label>
                     <input type="text" class="form-control" name="summary" value="<?php echo $item->summary?>">
@@ -65,13 +69,13 @@
                         <p class="text-danger"><?php echo $errors['publisher'] ?></p>
                     <?php endif; ?>
                 </div>
-                <div class="mb-3">
-                    <label class="form-label">License</label>
-                    <input type="text" class="form-control" name="license" value="<?php echo $item->license?>">
-                    <?php if(isset($errors['license'])): ?>
-                        <p class="text-danger"><?php echo $errors['license'] ?></p>
-                    <?php endif; ?>
-                </div>
+<!--                <div class="mb-3">-->
+<!--                    <label class="form-label">License</label>-->
+<!--                    <input type="text" class="form-control" name="license" value="--><?php //echo $item->license?><!--">-->
+<!--                    --><?php //if(isset($errors['license'])): ?>
+<!--                        <p class="text-danger">--><?php //echo $errors['license'] ?><!--</p>-->
+<!--                    --><?php //endif; ?>
+<!--                </div>-->
                 <div class="mb-3">
                     <label class="form-label">Sold</label>
                     <input type="text" class="form-control" name="sold" value="<?php echo $item->sold?>">
@@ -99,6 +103,15 @@
                     <?php if(isset($errors['selling'])): ?>
                         <p class="text-danger"><?php echo $errors['selling'] ?></p
                     <?php endif; ?>
+                </div>
+                <div class="mb-3 dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                        <?php $category = $cateDB->getIdData($item->categoryId);
+                                echo $category[0]['name'];?>
+                        <ul class="dropdown-menu">
+                            <?php foreach ($categories as $key => $value): ?>
+                                <li class="dropdown-item" ><?php echo $value['name'] ?></li>
+                            <?php endforeach; ?>
                 </div>
             <?php endforeach; ?>
             <button type="submit" class="btn btn-primary">Edit</button>

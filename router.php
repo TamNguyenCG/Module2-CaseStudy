@@ -53,6 +53,9 @@ switch ($page) {
         $authorController->searchAuthor();
         break;
 //Category Function
+    case "addCate" :
+        $cateController->add();
+        break;
     case "editCate":
         $cateController->cateEdit();
         break;

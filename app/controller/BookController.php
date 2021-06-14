@@ -4,14 +4,17 @@ namespace App\Controller;
 
 use App\Book;
 use App\Model\BookDB;
+use App\Model\CategoryDB;
 
 class BookController extends Controller
 {
     public BookDB $bookDB;
+    public CategoryDB $cateDB;
 
     public function __construct()
     {
         $this->bookDB = new BookDB();
+        $this->cateDB = new CategoryDB();
     }
 
     public function bookList()
@@ -35,20 +38,39 @@ class BookController extends Controller
         return $target_file;
     }
 
-    public function bookObj(): Book
+    public function randNumberToString($length): string
     {
+        $array = [];
+        for($i = 0; $i < $length; $i++){
+            $rand = rand(0,9);
+            array_push($array,$rand);
+        }
+        return implode("",$array);
+    }
+
+    public function MXBNumber(): string
+    {
+        $length = 9;
+        $string = $this->randNumberToString($length);
+        return "MXB-$string";
+    }
+
+    public function newBookObj(): Book
+    {
+        $length = 12;
         $image = $this->uploadImage();
         $name = $_POST['name'];
         $publish = $_POST['publish'];
         $republish = $_POST['republish'];
-        $ISBN = $_POST['ISBN'];
+        $ISBN = $this->randNumberToString($length);
         $summary = $_POST['summary'];
         $publisher = $_POST['publisher'];
-        $license = $_POST['license'];
+        $license = $this->MXBNumber();
         $sold = $_POST['sold'];
         $amount = $_POST['amount'];
         $recommend = $_POST['recommend'];
         $selling = $_POST['selling'];
+        $categoryId = $_POST['categoryId'];
 
         $data = [
             'image' => $image,
@@ -62,7 +84,42 @@ class BookController extends Controller
             'sold' => $sold,
             'amount' => $amount,
             'recommend' => $recommend,
-            'selling' => $selling
+            'selling' => $selling,
+            'categoryId' => $categoryId
+        ];
+        return new Book($data);
+    }
+
+    public function editBookObj(): Book
+    {
+        $image = $this->uploadImage();
+        $name = $_POST['name'];
+        $publish = $_POST['publish'];
+        $republish = $_POST['republish'];
+        $ISBN = $this->newBookObj()->ISBN;
+        $summary = $_POST['summary'];
+        $publisher = $_POST['publisher'];
+        $license = $this->newBookObj()->license;
+        $sold = $_POST['sold'];
+        $amount = $_POST['amount'];
+        $recommend = $_POST['recommend'];
+        $selling = $_POST['selling'];
+        $categoryId = $_POST['categoryId'];
+
+        $data = [
+            'image' => $image,
+            'name' => $name,
+            'publish' => $publish,
+            'republish' => $republish,
+            'ISBN' => $ISBN,
+            'summary' => $summary,
+            'publisher' => $publisher,
+            'license' => $license,
+            'sold' => $sold,
+            'amount' => $amount,
+            'recommend' => $recommend,
+            'selling' => $selling,
+            'categoryId' => $categoryId
         ];
         return new Book($data);
     }
@@ -70,7 +127,7 @@ class BookController extends Controller
     public function error(): array
     {
         $errors = [];
-        $fields = ['name', 'publish', 'republish', "ISBN", 'summary', 'publisher', 'license', 'sold', 'amount', 'recommend', 'selling'];
+        $fields = ['name', 'publish', 'republish', 'summary', 'publisher', 'sold', 'amount', 'recommend', 'selling','categoryId'];
 
         foreach ($fields as $field) {
             if (empty($_POST[$field])) {
@@ -83,12 +140,13 @@ class BookController extends Controller
     public function bookAdd()
     {
         $this->checkPermission();
+        $categories = $this->cateDB->getAllData();
         if ($_SERVER["REQUEST_METHOD"] == "GET") {
             include "resource/views/book/add.php";
         } else {
             $errors = $this->error();
             if (empty($errors)) {
-                $book = $this->bookObj();
+                $book = $this->newBookObj();
                 $this->bookDB->bookCreate($book);
                 header("location: index.php?page=booklist");
             } else {
@@ -125,6 +183,7 @@ class BookController extends Controller
     public function bookEdit()
     {
         $this->checkPermission();
+        $categories = $this->cateDB->getAllData();
         $id = $_REQUEST['id'];
         $books = $this->bookDB->getDetailByID($id);
 
@@ -133,7 +192,7 @@ class BookController extends Controller
         } else {
             $errors = $this->error();
             if (empty($errors)) {
-                $book = $this->bookObj();
+                $book = $this->editBookObj();
                 $this->bookDB->edit($id, $book);
                 header("location: index.php?page=booklist");
             } else {

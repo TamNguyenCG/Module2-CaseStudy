@@ -16,11 +16,12 @@ class CategoryDB extends Model
         parent::__construct($this->table, $this->field);
     }
 
-    public function add($name): bool
+    public function add(object $category): bool
     {
-        $sql = "INSERT INTO $this->table(name)VALUES(?)";
+        $sql = "INSERT INTO $this->table(`name`,`quantity`)VALUES(?,?)";
         $stmt = $this->connection->prepare($sql);
-        $stmt->bindParam(1, $name);
+        $stmt->bindParam(1, $category->name);
+        $stmt->bindParam(2, $category->quantity);
         return $stmt->execute();
     }
 
@@ -39,10 +40,12 @@ class CategoryDB extends Model
         return $stmt->fetch();
     }
 
-    public function editByID($id, object $category)
+    public function editByID($id, object $category): bool
     {
         $sql = "UPDATE $this->table SET name = ?, quantity = ?
-                WHERE $id = ?";
+                WHERE id = ?";
+        /*var_dump($id);
+        die();*/
         $stmt = $this->connection->prepare($sql);
         $stmt->bindParam(1, $category->name);
         $stmt->bindParam(2, $category->quantity);
@@ -56,7 +59,7 @@ class CategoryDB extends Model
         $categories = [];
         foreach ($result as $item) {
             $category = new Category($item);
-            $category->id = $item['id'];
+            $category->id = $id;
             $categories[] = $category;
         }
         return $categories;

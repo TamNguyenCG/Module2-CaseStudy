@@ -52,7 +52,7 @@ class CategoryController extends Controller
             'name' => $name,
             'quantity' => $quantity
         ];
-        return $category = new Category($data);
+        return new Category($data);
     }
 
 

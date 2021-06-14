@@ -9,8 +9,11 @@
 </head>
 <body>
 <div class="row" style="margin-top: 10px">
+    <a href="index.php?page=author" style="text-decoration: none"><h1>Author's List</h1></a>
     <div class="col-6">
+        <?php if ($_SESSION['userLogin']['role'] == 'admin'): ?>
         <a class="btn btn-success mb-2" href="index.php?page=addAuthor">Add</a>
+        <?php endif; ?>
     </div>
     <div class="col-6">
         <form class="d-flex" method="post" action="index.php?page=searchAuthor">
@@ -42,12 +45,14 @@
         <td><?php echo $author->numberOfBooks ?> </td>
         <td><?php echo $author->nationality ?> </td>
 <!--        <td>--><?php //echo $author->linkWiki ?><!-- </td>-->
-        <td><a href="index.php?page=deleteAuthor&id=<?php echo $author->id; ?>"
-               class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</a>
-        </td>
-        <td><a href="index.php?page=editAuthor&id=<?php echo $author->id; ?>"
-               class="btn btn-danger btn-dark" >Edit</a>
 
+        <td>
+            <?php if ($_SESSION['userLogin']['role'] == 'admin'): ?>
+            <a href="index.php?page=deleteAuthor&id=<?php echo $author->id; ?>"
+               class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</a>
+            <a href="index.php?page=editAuthor&id=<?php echo $author->id; ?>"
+               class="btn btn-danger btn-dark" >Edit</a>
+            <?php endif; ?>
         </td>
 
     </tr>

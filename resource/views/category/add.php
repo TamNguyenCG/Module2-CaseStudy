@@ -18,10 +18,6 @@
     <div>
         <form method="post" enctype="multipart/form-data">
             <div class="mb-3">
-                <label class="form-label">Image</label>
-                <input type="file" class="form-control" name="image">
-            </div>
-            <div class="mb-3">
                 <label class="form-label">Name</label>
                 <input type="text" class="form-control" name="name">
                 <?php if (isset($errors['name'])): ?>

@@ -19,6 +19,7 @@ class Book
     public int $amount;
     public string $recommend;
     public string $selling;
+    public int $categoryId;
 
 
     public function __construct($data)
@@ -35,5 +36,6 @@ class Book
         $this->amount = $data['amount'];
         $this->recommend = $data['recommend'];
         $this->selling = $data['selling'];
+        $this->categoryId = $data['categoryId'];
     }
 }

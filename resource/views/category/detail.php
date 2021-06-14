@@ -6,6 +6,7 @@
                 <div class="col-6">
                     <?php if ($_SESSION['userLogin']['role'] == 'admin'): ?>
                         <a class="btn btn-success" href="index.php?page=addCate">Add New Category</a>
+                        <a type="button" href="index.php?page=editCate&id=<?php echo $id ?>" class="btn btn-success">Edit</a>
                         <a type="button" href="index.php?page=deleteCate&id=<?php echo $id ?>"
                            class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete</a>
                     <?php endif; ?>
