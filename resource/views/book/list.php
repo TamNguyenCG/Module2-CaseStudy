@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-6">
                     <?php if ($_SESSION['userLogin']['role'] == 'admin'): ?>
-                    <a class="btn btn-success" href="index.php?page=add">Add New Book</a>
+                        <a class="btn btn-success" href="index.php?page=add">Add New Book</a>
                     <?php endif; ?>
                 </div>
                 <div class="col-6">
@@ -23,7 +23,6 @@
                         <th scope="col">No.</th>
                         <th scope="col">Book</th>
                         <th scope="col">Name</th>
-                        <th scope="col">Category</th>
                         <th scope="col">Publish Year</th>
                         <th scope="col">Republish</th>
                         <th scope="col">Publisher</th>
@@ -31,12 +30,11 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <?php foreach ($books as $key => $item): ; ?>
+                    <?php foreach ($books as $key => $item): ?>
                         <tr style="text-align: center">
                             <td scope="row"><?php echo $key + 1 ?></td>
                             <td><img width="150px" height="200px" src="<?php echo $item->image;?>"></td>
                             <td scope="row"><?php echo $item->name ?></td>
-                            <td scope="row"><?php echo $item->category ?></td>
                             <td scope="row"><?php echo $item->publish ?></td>
                             <td scope="row"><?php echo $item->republish ?></td>
                             <td scope="row"><?php echo $item->publisher ?></td>
@@ -44,10 +42,10 @@
                                 <a type="button" href="index.php?page=detail&id=<?php echo $item->id ?>"
                                    class="btn btn-success">Detail</a>
                                 <?php if ($_SESSION['userLogin']['role'] == 'admin'): ?>
-                                <a type="button" href="index.php?page=edit&id=<?php echo $item->id ?>"
-                                   class="btn btn-success">Edit</a>
-                                <a type="button" href="index.php?page=delete&id=<?php echo $item->id ?>"
-                                   class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete</a>
+                                    <a type="button" href="index.php?page=edit&id=<?php echo $item->id ?>"
+                                       class="btn btn-success">Edit</a>
+                                    <a type="button" href="index.php?page=delete&id=<?php echo $item->id ?>"
+                                       class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete</a>
                                 <?php endif; ?>
                             </td>
                         </tr>
@@ -58,4 +56,3 @@
         </div>
     </div>
 </div>
-

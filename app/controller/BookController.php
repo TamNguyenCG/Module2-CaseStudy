@@ -3,8 +3,10 @@
 namespace App\Controller;
 
 use App\Book;
+use App\Category;
 use App\Model\BookDB;
 use App\Model\CategoryDB;
+use JetBrains\PhpStorm\Pure;
 
 class BookController extends Controller
 {
@@ -124,6 +126,7 @@ class BookController extends Controller
         return new Book($data);
     }
 
+
     public function error(): array
     {
         $errors = [];
@@ -183,8 +186,8 @@ class BookController extends Controller
     public function bookEdit()
     {
         $this->checkPermission();
-        $categories = $this->cateDB->getAllData();
         $id = $_REQUEST['id'];
+        $categories = $this->cateDB->getAllData();
         $books = $this->bookDB->getDetailByID($id);
 
         if ($_SERVER["REQUEST_METHOD"] == "GET") {

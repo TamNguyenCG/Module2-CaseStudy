@@ -56,13 +56,6 @@
                     <p class="text-danger"><?php echo $errors['publisher'] ?></p>
                 <?php endif; ?>
             </div>
-            <!--            <div class="mb-3">-->
-            <!--                <label class="form-label">License</label>-->
-            <!--                <input type="text" class="form-control" name="license">-->
-            <!--                --><?php //if(isset($errors['license'])): ?>
-            <!--                    <p class="text-danger">--><?php //echo $errors['license'] ?><!--</p>-->
-            <!--                --><?php //endif; ?>
-            <!--            </div>-->
             <div class="mb-3">
                 <label class="form-label">Sold</label>
                 <input type="text" class="form-control" name="sold">
@@ -93,13 +86,13 @@
             </div>
             <div class="mb-3 ">
                 <label for="category">Select a category</label>
-                <select id="category" name="category">
+                <select id="category" name="categoryId">
                     Categories
                     <?php foreach ($categories as $key => $item): ?>
-                        <option value="<?php echo $item['name'] ?>" ><?php echo $item['name'] ?></option>
+                        <option value="<?php echo $item['id'] ?>" ><?php echo $item['name'] ?></option>
                     <?php endforeach; ?>
                     <?php if (isset($errors['categoryId'])): ?>
-                        <p class="text-danger"><?php echo $errors['CategoryId'] ?></p
+                        <p class="text-danger"><?php echo $errors['categoryId'] ?></p
                     <?php endif; ?>
                 </select>
             </div>
@@ -110,8 +103,3 @@
 </div>
 </body>
 </html>
-<style>
-    select {
-
-    }
-</style>
