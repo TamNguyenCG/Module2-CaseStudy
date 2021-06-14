@@ -4,14 +4,17 @@ namespace App\Controller;
 
 use App\Book;
 use App\Model\BookDB;
+use App\Model\CategoryDB;
 
 class BookController extends Controller
 {
     public BookDB $bookDB;
+    public CategoryDB $cateDB;
 
     public function __construct()
     {
         $this->bookDB = new BookDB();
+        $this->cateDB = new CategoryDB();
     }
 
     public function bookList()
@@ -67,6 +70,7 @@ class BookController extends Controller
         $amount = $_POST['amount'];
         $recommend = $_POST['recommend'];
         $selling = $_POST['selling'];
+        $categoryId = $_POST['categoryId'];
 
         $data = [
             'image' => $image,
@@ -80,7 +84,8 @@ class BookController extends Controller
             'sold' => $sold,
             'amount' => $amount,
             'recommend' => $recommend,
-            'selling' => $selling
+            'selling' => $selling,
+            'categoryId' => $categoryId
         ];
         return new Book($data);
     }
@@ -99,6 +104,7 @@ class BookController extends Controller
         $amount = $_POST['amount'];
         $recommend = $_POST['recommend'];
         $selling = $_POST['selling'];
+        $categoryId = $_POST['categoryId'];
 
         $data = [
             'image' => $image,
@@ -112,7 +118,8 @@ class BookController extends Controller
             'sold' => $sold,
             'amount' => $amount,
             'recommend' => $recommend,
-            'selling' => $selling
+            'selling' => $selling,
+            'categoryId' => $categoryId
         ];
         return new Book($data);
     }
@@ -120,7 +127,7 @@ class BookController extends Controller
     public function error(): array
     {
         $errors = [];
-        $fields = ['name', 'publish', 'republish', 'summary', 'publisher', 'sold', 'amount', 'recommend', 'selling'];
+        $fields = ['name', 'publish', 'republish', 'summary', 'publisher', 'sold', 'amount', 'recommend', 'selling','categoryId'];
 
         foreach ($fields as $field) {
             if (empty($_POST[$field])) {
@@ -133,6 +140,7 @@ class BookController extends Controller
     public function bookAdd()
     {
         $this->checkPermission();
+        $categories = $this->cateDB->getAllData();
         if ($_SERVER["REQUEST_METHOD"] == "GET") {
             include "resource/views/book/add.php";
         } else {
@@ -175,6 +183,7 @@ class BookController extends Controller
     public function bookEdit()
     {
         $this->checkPermission();
+        $categories = $this->cateDB->getAllData();
         $id = $_REQUEST['id'];
         $books = $this->bookDB->getDetailByID($id);
 
